@@ -1,38 +1,25 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: Basic EDA for high-throughput data
+teaching: 45
+exercises: 30
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Create four different types of plots for high-throughput data.
+- Explain how to use them to detect problems.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- What problems can different kinds of exploratory plots detect in high-throughput data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "Basic EDA for high-throughput data"
-teaching: 45
-exercises: 30
-questions:
-- "What problems can different kinds of exploratory plots detect in high-throughput data?"
-objectives:
-- "Create four different types of plots for high-throughput data."
-- "Explain how to use them to detect problems."
-keypoints:
-- "While it is tempting to jump straight in to inferential analyses, it’s very important to run EDA first. Visualizing high-throughput data with EDA enables researchers to detect biological and technical issues with data. Plots can show at a glance where errors lie, making inferential analyses more accurate, efficient, and replicable."
-math: yes
----
 
 ## Basic Exploratory Data Analysis 
 
@@ -303,6 +290,6 @@ polygon(c(-b,k,k,-b),c(-b,-b,k,k),col="red",density=0,border="red")
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- While it is tempting to jump straight in to inferential analyses, it’s very important to run EDA first. Visualizing high-throughput data with EDA enables researchers to detect biological and technical issues with data. Plots can show at a glance where errors lie, making inferential analyses more accurate, efficient, and replicable.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

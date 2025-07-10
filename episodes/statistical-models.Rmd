@@ -1,41 +1,28 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: Statistical Models
+teaching: 30
+exercises: 30
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Define the Poisson distribution.
+- Explain its relevance in RNA sequence analysis.
+- Explain the purpose of maximum likelihood estimation.
+- Generate some research questions that maximum likelihood estimation can address.
+- Model distributions of gene variances.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- What are some of the most widely used parametric distributions used in the life sciences besides the normal?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "Statistical Models"
-teaching: 30
-exercises: 30
-questions:
-- "What are some of the most widely used parametric distributions used in the life sciences besides the normal?"
-objectives:
-- "Define the Poisson distribution."
-- "Explain its relevance in RNA sequence analysis."
-- "Explain the purpose of maximum likelihood estimation."
-- "Generate some research questions that maximum likelihood estimation can address."
-- "Model distributions of gene variances."
-keypoints:
-- "Not every dataset follows a normal distribution. It is important to be aware of other parametric distributions underlying the data collected. This improves the technical precision of study results."
-math: yes
----
 
 # Statistical Models
 
@@ -904,7 +891,7 @@ is large and p is not too close to 0 or 1. This means that:
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- Not every dataset follows a normal distribution. It is important to be aware of other parametric distributions underlying the data collected. This improves the technical precision of study results.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

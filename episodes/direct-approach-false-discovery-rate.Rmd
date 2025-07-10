@@ -1,39 +1,26 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: Direct Approach to FDR and q-values
+teaching: 20
+exercises: 40
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Apply the Storey correction to identify true negatives.
+- Explain the difference between the Storey correction and Benjamini-Hochberg approach.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- How can you control false discovery rates when you don't have an a priori error rate?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "Direct Approach to FDR and q-values"
-teaching: 20
-exercises: 40
-questions:
-- "How can you control false discovery rates when you don't have an a priori error rate?"
-objectives:
-- "Apply the Storey correction to identify true negatives."
-- "Explain the difference between the Storey correction and Benjamini-Hochberg approach."
-keypoints:
-- "The Storey correction makes different assumptions that Benjamini-Hochberg. It does not set a priori alpha levels, but instead estimates the number of true null hypotheses from a given data set."
-- "The Storey correction is less computationally stable than Benjamini-Hochberg."
-math: yes
----
+
 
 ## Direct Approach to FDR and q-values (Advanced)
 
@@ -383,6 +370,7 @@ asking you to create a Monte Carlo simulation.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- The Storey correction makes different assumptions that Benjamini-Hochberg. It does not set a priori alpha levels, but instead estimates the number of true null hypotheses from a given data set.
+- The Storey correction is less computationally stable than Benjamini-Hochberg.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -1,41 +1,26 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: False Discovery Rate
+teaching: 30
+exercises: 10
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Calculate the false discovery rate.
+- Explain the limitations of restricting family wise error rates in a study.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- What are False Discovery Rates, and when are they a concern in data analysis?
+- How can you control false discovery rates?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "False Discovery Rate"
-teaching: 30
-exercises: 10
-questions:
-- "What are False Discovery Rates, and when are they a concern in data analysis?"
-- "How can you control false discovery rates?"
-objectives:
-- "Calculate the false discovery rate."
-- "Explain the limitations of restricting family wise error rates in a study."
-keypoints:
-- "Restricting FWER too much can cause researchers to reject the null hypothesis when it’s actually true. This is especially likely in the small samples used in discovery phase experiments. "
-- "The Benjamini-Hochberg correction controls FDR by guaranteeing it to be below a desired alpha level."
-- "FDR is a more liberal correction than Bonferroni. While it generates more false positives, it also provides more statistical power. "
-math: yes
----
 
 ## False Discovery Rate 
 
@@ -321,6 +306,8 @@ experiments where we may accept FDR levels much higher than 0.05.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- Restricting FWER too much can cause researchers to reject the null hypothesis when it’s actually true. This is especially likely in the small samples used in discovery phase experiments. 
+- The Benjamini-Hochberg correction controls FDR by guaranteeing it to be below a desired alpha level.
+- FDR is a more liberal correction than Bonferroni. While it generates more false positives, it also provides more statistical power. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
