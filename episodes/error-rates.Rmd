@@ -1,41 +1,27 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: Error Rates
+teaching: 20
+exercises: 10
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Calculate error rates in simulated data.
+- Calculate the number of false positives that occur in a given data set.
+- Define family wise error rates.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- Why are type I and II error rates a problem in inferential statistics?
+- What is Family Wise Error Rate, and why is it a concern in high throughput data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "Error Rates"
-teaching: 20
-exercises: 10
-questions:
-- "Why are type I and II error rates a problem in inferential statistics?"
-- "What is Family Wise Error Rate, and why is it a concern in high throughput data?"
-objectives:
-- "Calculate error rates in simulated data."
-- "Calculate the number of false positives that occur in a given data set."
-- "Define family wise error rates."
-keypoints:
-- "Type 1 and Type II error are complementary concerns in data analysis. The reason we don’t have extremely strict cutoffs for alpha is because we don’t want to miss finding true positive results."
-- "It is possible to calculate the probability of finding at least one false positive result when conducting multiple inferential tests. This is the Family Wise Error Rate."
-math: yes
----
 
 ## Error Rates
 
@@ -239,6 +225,7 @@ M. Krzywinski and N. Altman in <i>Nature Methods</i> <b>13</b>, 603-604 (2016).
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- Type 1 and Type II error are complementary concerns in data analysis. The reason we don’t have extremely strict cutoffs for alpha is because we don’t want to miss finding true positive results.
+- It is possible to calculate the probability of finding at least one false positive result when conducting multiple inferential tests. This is the Family Wise Error Rate.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

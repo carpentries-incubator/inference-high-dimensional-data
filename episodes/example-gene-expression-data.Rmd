@@ -1,39 +1,25 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: Example Gene Expression Datasets
+teaching: 15
+exercises: 20
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Explore a high-throughput dataset composed of three tables.
+- Examine the features (high-throughput measurements) of the data you explored.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- What data will be be using for our analyses?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "Example Gene Expression Datasets"
-teaching: 15
-exercises: 20
-questions:
-- "What data will be be using for our analyses?"
-objectives:
-- "Explore a high-throughput dataset composed of three tables."
-- "Examine the features (high-throughput measurements) of the data you explored."
-keypoints:
-- "High-throughput data measures thousands of features."
-- "High-throughput data is typically composed of multiple tables."
-math: yes
----
 
 # Explore a Gene Expression Dataset
 
@@ -208,6 +194,7 @@ subject that we measured on 2005-06-10?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- High-throughput data measures thousands of features.
+- High-throughput data is typically composed of multiple tables.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

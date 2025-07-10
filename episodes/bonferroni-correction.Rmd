@@ -1,38 +1,24 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: The Bonferroni Correction
+teaching: 15
+exercises: 30
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Apply the Bonferroni procedure to identify the true positives.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- What is one way to control family wise error rate?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "The Bonferroni Correction"
-teaching: 15
-exercises: 30
-questions:
-- "What is one way to control family wise error rate?"
-objectives:
-- "Apply the Bonferroni procedure to identify the true positives."
-keypoints:
-- "The Bonferroni technique controls FWER by dividing a predetermined alpha rate (e.g. alpha = .05) by the number of inferential tests performed."
-- "The Bonferroni correction is very strict and conservative."
-math: yes
----
 
 ## The Bonferroni Correction 
 
@@ -248,6 +234,7 @@ the null hypothesis for genes that”.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- The Bonferroni technique controls FWER by dividing a predetermined alpha rate (e.g. alpha = .05) by the number of inferential tests performed.
+- The Bonferroni correction is very strict and conservative.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

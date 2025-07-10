@@ -1,40 +1,26 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: Basic inference for high-throughput data
+teaching: 25
+exercises: 35
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Demonstrate that p-values are random variables.
+- Simulate p-values from multiple analyses of high-throughput data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- How are inferences from high-throughput data different from inferences from smaller samples?
+- How is the interpretation of p-values affected by high-throughput data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "Basic inference for high-throughput data"
-teaching: 25
-exercises: 35
-questions:
-- "How are inferences from high-throughput data different from inferences from smaller samples?"
-- "How is the interpretation of p-values affected by high-throughput data?"
-objectives:
-- "Demonstrate that p-values are random variables."
-- "Simulate p-values from multiple analyses of high-throughput data."
-keypoints:
-- "P-values are random variables."
-- "Very small p-values can occur by random chance when analyzing high-throughput data."
-math: yes
----
 
 ## Inference in Practice
 
@@ -351,6 +337,7 @@ hist(pvals)
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- P-values are random variables.
+- Very small p-values can occur by random chance when analyzing high-throughput data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

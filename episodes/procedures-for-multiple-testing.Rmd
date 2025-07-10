@@ -1,42 +1,27 @@
 ---
-title: Repeated Measures Designs
-teaching: 0
-exercises: 0
+title: Procedures for Multiple Comparisons
+teaching: 10
+exercises: 20
 source: Rmd
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- A repeated measures design measures the response of experimental units repeatedly during the study.
+- Define multiple comparisons and the resulting problems.
+- Explain terms associated with error rates.
+- Explain the relationship between error rates and multiple comparisons.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a repeated measures design?
+- Why are p-values not a useful quantity when dealing with high-dimensional data?
+- What are error rates and how are they calculated?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 ```
----
-source: Rmd
-title: "Procedures for Multiple Comparisons"
-teaching: 10
-exercises: 20
-questions:
-- "Why are p-values not a useful quantity when dealing with high-dimensional data?"
-- "What are error rates and how are they calculated?"
-objectives:
-- "Define multiple comparisons and the resulting problems."
-- "Explain terms associated with error rates."
-- "Explain the relationship between error rates and multiple comparisons."
-keypoints:
-- "We want our inferential analyses to maximize the percentage of true positives (sensitivity) and true negatives (specificity)"
-- "p values are random variables, conducting multiple comparisons on high throughput data can produce a large number of false positives (Type 1 errors) simply by chance."
-- "There are procedures for improving sensitivity and specificity by controlling error rates below a predefined value."
-math: yes
----
 
 ## Procedures
 
@@ -141,6 +126,8 @@ This is a consequence of the more general formula P (A and B) = P (A)P (B|A).
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- .
+- We want our inferential analyses to maximize the percentage of true positives (sensitivity) and true negatives (specificity)
+- p values are random variables, conducting multiple comparisons on high throughput data can produce a large number of false positives (Type 1 errors) simply by chance.
+- There are procedures for improving sensitivity and specificity by controlling error rates below a predefined value.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
