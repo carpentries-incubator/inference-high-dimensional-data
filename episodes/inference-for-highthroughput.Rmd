@@ -190,15 +190,19 @@ nullpvals <- apply(randomData, 1, myttest)
 sum(nullpvals < 0.05)
 ```
 
-> ## Discussion
-> Turn to a partner and explain what you did and found in the previous two 
-> analyses. What do you think the results mean? Then, share your responses with 
-> the group through the collaborative document.
->
-> > ## Solution
-> >
-> {: .solution}
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+Turn to a partner and explain what you did and found in the previous two 
+analyses. What do you think the results mean? Then, share your responses with 
+the group through the collaborative document.
+
+
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 As we will explain later in the chapter, this is to be expected: 419 is roughly 
 0.05 * 8192 and we will describe the theory that tells us why this prediction 
@@ -206,7 +210,9 @@ works.
 
 #### Faster t-test implementation
 
-Before we continue, we should point out that the above implementation is very inefficient. There are several faster implementations that perform t-test for high-throughput data. We make use of a function that is not available from CRAN, 
+Before we continue, we should point out that the above implementation is very 
+inefficient. There are several faster implementations that perform t-test for 
+high-throughput data. We make use of a function that is not available from CRAN, 
 but rather from the Bioconductor project. 
 
 To download and install packages from Bioconductor, we can use the `install_bioc` function in `rafalib` to install the package:
@@ -215,6 +221,7 @@ To download and install packages from Bioconductor, we can use the `install_bioc
 ```{r, eval=FALSE}
 install_bioc("genefilter")
 ```
+
 Now we can show that this function is much faster than our code above and 
 produce practically the same answer:
 
@@ -248,92 +255,99 @@ hist(pvals)
 ```
 
 ![P-value histogram for 1,000 t-tests of samples of size 12.](./fig/p_value_histogram-1.png) 
-> ## Exercise 1: What proportion of the p-values is below 0.05?
->
-> > ## Solution
-> > `sum(pvals < 0.05)/length(pvals)`  
-> > `r sum(pvals < 0.05)` of the p-values are less than 0.05 of a total  
-> > `r length(pvals)` p-values
-> {: .solution}
-{: .challenge}
 
-> ## Exercise 2: What proportion of the p-values is below 0.01?
->
-> > ## Solution
-> > `sum(pvals < 0.01)/length(pvals)`  
-> > `r sum(pvals < 0.01)` of the p-values are less than 0.01 of a total  
-> > `r length(pvals)` p-values
-> {: .solution}
-{: .challenge}
 
-> ## Exercise 3
-> Assume you are testing the effectiveness of 20 diets on mice weight. For each 
-> of the 20 diets, you run an experiment with 10 control mice and 10 treated 
-> mice. Assume the null hypothesis, that the diet has no effect, 
-> is true for all 20 diets and that mice weights follow a normal distribution, 
-> with mean 30 grams and a standard deviation of 2 grams. Run a Monte Carlo 
-> simulation for one of these studies:
->
->  ~~~
->  cases = rnorm(10, 30, 2)
->  controls = rnorm(10, 30, 2) 
->  t.test(cases, controls)     
->  ~~~
->  {: .language-r}
->
->  Now run a Monte Carlo simulation imitating the results for the experiment for 
->  all 20 diets. If you set the seed at 100, set.seed(100), how many of p-values 
->  are below 0.05?
->
-> > ## Solution
-> > `set.seed(100)`  
-> > `n <- 20`  
-> > `null <- vector("numeric", n)`  
-> > `for (i in 1:n) {`  
-> > `cases = rnorm(10, 30, 2)`  
-> > `controls = rnorm(10, 30, 2)`  
-> > `null[i] <- t.test(cases, controls)$p.val`   
-> > `}`  
-> > `sum(null < 0.05)`
-> > 
-> {: .solution}
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
 
-> ## Exercise 4
-> Now create a simulation to learn about the distribution of the 
-> number of p-values that are less than 0.05. In question 3, we ran the 20 diet 
-> experiment once. Now we will run the
-> experiment 1,000 times and each time save the number of p-values that are less 
-> than 0.05.
-> Set the seed at 100, set.seed(100), run the code from Question 3 1,000 times, 
-> and save the number of times the p-value is less than 0.05 for each of the 
-> 1,000 instances. What is the average of these numbers? This is the expected 
-> number of tests (out of the 20 we run) that we will reject when the null is 
-> true.
->
-> > ## Solution
-> > `set.seed(100)`   
-> > `res <- replicate(1000, {`   
-> > `  randomData <- matrix(rnorm(20*20,30,2),20,20)`   
-> > `  pvals <- rowttests(randomData, factor(g))$p.value`   
-> > `  return(sum(pvals<0.05))` # total number of false positives per replication  
-> > `})`   
-> > `mean(res)`   
-> >
-> {: .solution}
-{: .challenge}
+## Exercise 1: What proportion of the p-values is below 0.05?
 
-> ## Exercise 5
-> What this says is that on average, we expect some p-value to be 0.05 even when 
-> the null is true for all diets. Use the same simulation data and report for 
-> what percent of the 1,000 replications did we make more than 0 false 
-> positives?
-> 
-> > ## Solution
-> > `mean(res > 0)`   
-> >
-> {: .solution}
-{: .challenge}
+:::::::::::::::: solution
+
+`sum(pvals < 0.05)/length(pvals)`  
+`r sum(pvals < 0.05)` of the p-values are less than 0.05 of a total  
+`r length(pvals)` p-values
+
+:::::::::::::::::::::::::
+
+## Exercise 2: What proportion of the p-values is below 0.01?
+
+:::::::::::::::: solution
+
+`sum(pvals < 0.01)/length(pvals)`  
+`r sum(pvals < 0.01)` of the p-values are less than 0.01 of a total  
+`r length(pvals)` p-values
+
+:::::::::::::::::::::::::
+
+## Exercise 3
+Assume you are testing the effectiveness of 20 diets on mice weight. For each 
+of the 20 diets, you run an experiment with 10 control mice and 10 treated 
+mice. Assume the null hypothesis, that the diet has no effect, 
+is true for all 20 diets and that mice weights follow a normal distribution, 
+with mean 30 grams and a standard deviation of 2 grams. Run a Monte Carlo 
+simulation for one of these studies:
+
+ ~~~
+ cases = rnorm(10, 30, 2)
+ controls = rnorm(10, 30, 2) 
+ t.test(cases, controls)     
+ ~~~
+
+ Now run a Monte Carlo simulation imitating the results for the experiment for 
+ all 20 diets. If you set the seed at 100, set.seed(100), how many of p-values 
+ are below 0.05?
+ 
+:::::::::::::::: solution
+
+`set.seed(100)`  
+`n <- 20`  
+`null <- vector("numeric", n)`  
+`for (i in 1:n) {`  
+`cases = rnorm(10, 30, 2)`  
+`controls = rnorm(10, 30, 2)`  
+`null[i] <- t.test(cases, controls)$p.val`   
+`}`  
+`sum(null < 0.05)`
+
+:::::::::::::::::::::::::
+
+## Exercise 4
+Now create a simulation to learn about the distribution of the 
+number of p-values that are less than 0.05. In question 3, we ran the 20 diet 
+experiment once. Now we will run the
+experiment 1,000 times and each time save the number of p-values that are less 
+than 0.05.
+Set the seed at 100, set.seed(100), run the code from Question 3 1,000 times, 
+and save the number of times the p-value is less than 0.05 for each of the 
+1,000 instances. What is the average of these numbers? This is the expected 
+number of tests (out of the 20 we run) that we will reject when the null is 
+true.
+
+:::::::::::::::: solution
+
+`set.seed(100)`   
+`res <- replicate(1000, {`   
+`  randomData <- matrix(rnorm(20*20,30,2),20,20)`   
+`  pvals <- rowttests(randomData, factor(g))$p.value`   
+`  return(sum(pvals<0.05))` # total number of false positives per replication  
+`})`   
+`mean(res)`
+
+:::::::::::::::::::::::::
+
+## Exercise 5
+What this says is that on average, we expect some p-value to be 0.05 even when 
+the null is true for all diets. Use the same simulation data and report for 
+what percent of the 1,000 replications did we make more than 0 false 
+positives?
+
+:::::::::::::::: solution
+
+`mean(res 0)` 
+
+:::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
