@@ -39,7 +39,7 @@ likely get 0:
 
 ```{r}
 set.seed(1)
-population <- unlist(read.csv(file = "../data/femaleControlsPopulation.csv"))
+population <- unlist(read.csv(file = "./data/femaleControlsPopulation.csv"))
 m <- 10000
 p0 <- 0.90
 m0 <- m*p0
@@ -81,7 +81,7 @@ p-value < 0.05 significant.
 > {: .solution}
 {: .challenge}
 
-![confusion matrix showing error rates](../fig/confusion-matrix-3.png)
+![confusion matrix showing error rates](./fig/confusion-matrix-3.png)
 
 For more on this, see [<i>Classification evaluation</i>](https://www.nature.com/articles/nmeth.3945) by J. Lever, 
 M. Krzywinski and N. Altman in <i>Nature Methods</i> <b>13</b>, 603-604 (2016).
@@ -137,7 +137,7 @@ mypar(1, 1)
 hist(Qs) ##Q is a random variable, this is its distribution
 ```
 
-![Q (false positives divided by number of features called significant) is a random variable. Here we generated a distribution with a Monte Carlo simulation.](../fig/Q_distribution.png)
+![Q (false positives divided by number of features called significant) is a random variable. Here we generated a distribution with a Monte Carlo simulation.](./fig/Q_distribution.png)
 
 The FDR is the average value of $Q$
 ```{r}
@@ -171,7 +171,7 @@ polygon(c(0,0.05,0.05,0), c(0,0,h$counts[1],h$counts[1]), col="lightsteelblue1")
 abline(h=m0/20)
 ```
 
-![Histogram of p-values. Monte Carlo simulation was used to generate data with m_1 genes having differences between groups.](../fig/pval_hist.png)
+![Histogram of p-values. Monte Carlo simulation was used to generate data with m_1 genes having differences between groups.](./fig/pval_hist.png)
 
 The first bar (grey) on the left represents cases with p-values smaller than 
 0.05. From the horizontal line we can infer that about 1/2 are false positives. 
@@ -184,7 +184,7 @@ polygon(c(0,0.01,0.01,0),c(0,0,h$counts[1],h$counts[1]),col="lightsteelblue1")
 abline(h=m0/100)
 ```
 
-![Histogram of p-values with breaks at every 0.01. Monte Carlo simulation was used to generate data with m_1 genes having differences between groups.](../fig/pval_hist2-1.png)
+![Histogram of p-values with breaks at every 0.01. Monte Carlo simulation was used to generate data with m_1 genes having differences between groups.](./fig/pval_hist2-1.png)
 
 As we consider a lower and lower p-value cut-off, the number of features 
 detected decreases (loss of sensitivity), but our FDR also decreases (gain of 
@@ -224,7 +224,7 @@ cutoff <- sort(pvals)[k]
 cat("k =",k,"p-value cutoff=",cutoff)
 ```
 
-![Plotting p-values plotted against their rank illustrates the Benjamini-Hochberg procedure. The plot on the right is a close-up of the plot on the left.](../fig/pvalue_vs_rank_plot-1.png)
+![Plotting p-values plotted against their rank illustrates the Benjamini-Hochberg procedure. The plot on the right is a close-up of the plot on the left.](./fig/pvalue_vs_rank_plot-1.png)
 
 We can show mathematically that this procedure has FDR lower than 5%. Please see Benjamini-Hochberg (1995) for details. An important outcome is that we now have 
 selected 11 tests instead of just 2. If we are willing to set an FDR of 50% 
@@ -242,7 +242,7 @@ plot(pvals,fdr,log="xy")
 abline(h=alpha,v=cutoff) ##cutoff was computed above
 ```
 
-![FDR estimates plotted against p-value.](../fig/fdr-versus-pval-1.png)
+![FDR estimates plotted against p-value.](./fig/fdr-versus-pval-1.png)
 
 We can run a Monte-Carlo simulation to confirm that the FDR is in fact lower 
 than .05. We compute all p-values first, and then use these to decide which get 
@@ -271,7 +271,7 @@ print(FDR)
 ```
 
 
-![Histogram of Q (false positives divided by number of features called significant) when the alternative hypothesis is true for some features.](../fig/Q_distribution2-1.png)
+![Histogram of Q (false positives divided by number of features called significant) when the alternative hypothesis is true for some features.](./fig/Q_distribution2-1.png)
 
 The FDR is lower than 0.05. This is to be expected because we need to be 
 conservative to ensure the FDR $\leq$ 0.05 for any value of $m_0$, such as for 

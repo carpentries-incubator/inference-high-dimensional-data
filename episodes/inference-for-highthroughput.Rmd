@@ -47,7 +47,7 @@ To illustrate a random variable, sample 12 mice from the population three times
 and watch how the average changes.
 
 ```{r load_data}
-population <- unlist(read.csv(file = "../data/femaleControlsPopulation.csv"))
+population <- unlist(read.csv(file = "./data/femaleControlsPopulation.csv"))
 ```
 
 
@@ -75,7 +75,7 @@ call it <i>Z</i>. Recall that a t-statistic is the ratio of the observed effect
 size and the standard error. Because it’s the ratio of two random variables, it
 too is a random variable. So for a two sided test the p-value is: 
 
-![](../fig/pequals.png) 
+![](./fig/pequals.png) 
 
 In R, we write:
 ```{r, eval=FALSE}
@@ -99,16 +99,16 @@ pvals <- replicate(B, {
   })
 hist(pvals)
 ```
-![P-value histogram for 10,000 tests in which null hypothesis is true.](../fig/pvalue_hist-1.png) 
+![P-value histogram for 10,000 tests in which null hypothesis is true.](./fig/pvalue_hist-1.png) 
 As implied by the histogram, in this case the distribution of the p-value is 
 uniformly distributed. In fact, we can show theoretically that when the null 
 hypothesis is true, this is always the case. For the case in which we use the 
 CLT, we have that the null hypothesis <i>H<sub>0</sub></i> implies that our test statistic <i>Z</i> follows a normal distribution with mean 0 and SD 1 thus:
 
-![](../fig/psubaequals.png) 
+![](./fig/psubaequals.png) 
 This implies that:
 
-![](../fig/probpltpsuba.png)
+![](./fig/probpltpsuba.png)
 
 which is the definition of a uniform distribution.
 
@@ -146,7 +146,7 @@ qqnorm(e[g==0])
 qqline(e[g==0])
 ```
 
-![Normal qq-plots for one gene. Left plot shows first group and right plot shows second group.](../fig/qqplots_for_one_gene-1.png) 
+![Normal qq-plots for one gene. Left plot shows first group and right plot shows second group.](./fig/qqplots_for_one_gene-1.png) 
 
 The qq-plots show that the data is well approximated by the normal 
 approximation. The t-test does not find this gene to be statistically 
@@ -247,7 +247,7 @@ head(pvals)
 hist(pvals)
 ```
 
-![P-value histogram for 1,000 t-tests of samples of size 12.](../fig/p_value_histogram-1.png) 
+![P-value histogram for 1,000 t-tests of samples of size 12.](./fig/p_value_histogram-1.png) 
 > ## Exercise 1: What proportion of the p-values is below 0.05?
 >
 > > ## Solution

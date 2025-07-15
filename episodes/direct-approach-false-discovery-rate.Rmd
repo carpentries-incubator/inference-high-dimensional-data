@@ -72,7 +72,7 @@ N <- 12
 g <- factor( c(rep(0, N), rep(1, N)) )
 
 # re-create p-values from earlier if needed
-population <- unlist(read.csv(file = "../data/femaleControlsPopulation.csv"))
+population <- unlist(read.csv(file = "./data/femaleControlsPopulation.csv"))
 m <- 10000
 p0 <- 0.90
 m0 <- m*p0
@@ -105,7 +105,7 @@ abline(h= pi0)
 print(pi0) ##this is close to the trye pi0=0.9
 ```
 
-![p-value histogram with pi0 estimate.](../fig/pi0_estimate.png)
+![p-value histogram with pi0 estimate.](./fig/pi0_estimate.png)
 
 With this estimate in place we can, for example, alter the Benjamini and 
 Hochberg procedures to select the $k$ to be the largest value so that: 

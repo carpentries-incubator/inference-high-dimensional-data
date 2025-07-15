@@ -105,7 +105,7 @@ Controlling the FWER at 0.05 is a very conservative approach. Using the p-values
 
 ```{r}
 set.seed(1)
-population <- unlist(read.csv(file = "../data/femaleControlsPopulation.csv"))
+population <- unlist(read.csv(file = "./data/femaleControlsPopulation.csv"))
 m <- 10000
 N <- 12
 p0 <- 0.90 ##10% of diets work, 90% don't

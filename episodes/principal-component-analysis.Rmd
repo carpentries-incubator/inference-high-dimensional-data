@@ -137,7 +137,7 @@ equilibrium. We then use the length of the springs from the rod as the first
 principal component.
 This is explained in more detail on [this Q&A website](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues).
 
-![](../fig/pendulum.gif)
+![](./fig/pendulum.gif)
 
 #### Example: Reducing two dimensions to one
 
@@ -159,7 +159,7 @@ plot(y[1,], y[2,], xlab="Twin 1 (standardized height)",
 points(y[1,1:2], y[2,1:2], col=2, pch=16)
 ```
 
-![](../fig/simulate_twin_heights.png)
+![](./fig/simulate_twin_heights.png)
 To help with the illustration, think of this as high-throughput gene expression 
 data with the twin pairs representing the $N$ samples and the two heights 
 representing gene expression from two genes. 
@@ -201,7 +201,7 @@ points(y[1,1:2],y[2,1:2],col=2,pch=16)
 plot(z[1,],z[2,],xlim=thelim,ylim=thelim,xlab="Average height",ylab="Difference in height")
 points(z[1,1:2],z[2,1:2],col=2,pch=16)
 ```
-![](../fig/simulate_twin_heights_again.png)
+![](./fig/simulate_twin_heights_again.png)
 
  How do we perform a PCA?
 
@@ -265,7 +265,7 @@ hist(pros2$lweight, breaks = "FD")
 hist(pros2$lbph, breaks = "FD")
 ```
 
-![Compare variances between log-transformed prostate weight and benign enlargement](../fig/var-hist.png)
+![Compare variances between log-transformed prostate weight and benign enlargement](./fig/var-hist.png)
 
 Note that variance is greatest for `lbph` and lowest for `lweight`. It is clear
 from this output that we need to scale each of these variables before including
@@ -359,7 +359,7 @@ varDF <- data.frame(Dimensions = 1:length(varExp), varExp = varExp)
 plot(varDF)
 ```
 
-![Screeplot showing proportion of variance explained by each principal component.](../fig/vardf-plot.png)
+![Screeplot showing proportion of variance explained by each principal component.](./fig/vardf-plot.png)
 
 The screeplot shows that the first principal component explains most of the
 variance in the data (>50%) and each subsequent principal component explains
@@ -411,7 +411,7 @@ A biplot of the first two principal components can be created as follows:
 biplot(pca.pros, xlim = c(-0.3, 0.3))
 ```
 
-![Biplot of first two principal components.](../fig/stats-biplot.png)
+![Biplot of first two principal components.](./fig/stats-biplot.png)
 
 This biplot shows the position of each patient on a 2-dimensional plot where
 loadings can be observed via the red arrows associated with each of
@@ -454,7 +454,7 @@ associated metadata, downloaded from the
 
 ```{r se, message=FALSE}
 library("SummarizedExperiment")
-cancer <- readRDS("../data/cancer_expression.rds")
+cancer <- readRDS("./data/cancer_expression.rds")
 mat <- assay(cancer)
 metadata <- colData(cancer)
 ```
@@ -661,7 +661,7 @@ Let's consider this biplot in more detail, and also display the loadings:
 ```{r pca-biplot, fig.cap="Biplot of principal components one and two showing two groups for PC1 according to gene expression."}
 biplot(pc, lab = rownames(pc$metadata), pointSize = 1, labSize = 1)
 ```
-![Biplot of principal components one and two showing two groups for PC1 according to gene expression.](../fig/pca-biplot.png)
+![Biplot of principal components one and two showing two groups for PC1 according to gene expression.](./fig/pca-biplot.png)
 
 Sizes of labels, points and axes can be changed using arguments in `biplot`
 (see `help("biplot")`). We can see from the biplot that there appear to be two
@@ -672,7 +672,7 @@ grouping is apparent on other PC axes.
 plotloadings(pc, labSize = 3)
 ```
 
-![Plot of principal component loadings show magnitude and direction of gene probes.](../fig/pca-loadings.png)
+![Plot of principal component loadings show magnitude and direction of gene probes.](./fig/pca-loadings.png)
 
 Plotting the loadings shows the magnitude and direction of loadings for probes
 detecting genes on each principal component.
@@ -705,7 +705,7 @@ multiple biplots including different principal components.
 pairsplot(pc)
 ```
 
-![Pairsplot of principal components show clusters on PC1 only.](../fig/pairsplot.png)
+![Pairsplot of principal components show clusters on PC1 only.](./fig/pairsplot.png)
 
 The plots show two apparent clusters involving the first principal component
 only. No other clusters are found involving other principal components.
