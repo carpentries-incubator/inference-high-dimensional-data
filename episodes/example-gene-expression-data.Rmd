@@ -118,79 +118,58 @@ head(match(geneAnnotation$PROBEID, rownames(geneExpression)))
 The table also includes biological information about the features, namely 
 chromosome location and the gene "name" used by biologists.
 
-For the remaining parts of this lesson we will be downloading larger datasets 
-than those we have been using. Most of these datasets are not available as part 
-of the standard R installation or packages such as UsingR. For some of these 
-packages, we have created packages and offer them via GitHub. To download these 
-you will need to install the devtools package. Once you do this, you can install 
-packages such as the GSE5859Subset which we will be using here:
+::::::::::::::::::::::::::::::::::::: challenge
 
-```{r, eval=FALSE}
-library(devtools)
-install_github("genomicsclass/GSE5859Subset")
-library(GSE5859Subset)
-data(GSE5859Subset)
-```
+## Exercise 1: How many samples were processed on 2005-06-27?
 
-This package loads three tables: geneAnnotation, geneExpression, and sampleInfo. 
-Answer the following questions to familiarize yourself with the data set:
+:::::::::::::::: solution
+
+~~~
+unique(sampleInfo$date) # check date format
+sampleInfo[sampleInfo$date == "2005-06-27",]  
+sum(sampleInfo$date == "2005-06-27") # sum of TRUEs     
+~~~
+
+:::::::::::::::::::::::::
+
+## Exercise 2: How many of the genes represented in this particular technology are on chromosome Y?
+
+:::::::::::::::: solution
+
+~~~
+unique(geneAnnotation$CHR) # check chromosome spelling  
+sum(geneAnnotation$CHR == "chrY", na.rm = TRUE) # remove missing values # (NAs) to sum TRUEs
+~~~
+:::::::::::::::::::::::::
+
+## Exercise 3: What is the log expression value for gene ARPC1A on the one subject that we measured on 2005-06-10?
+
+:::::::::::::::: solution
+
+~~~
+sampleInfo[sampleInfo$date == "2005-06-10",] # June 10 sample 
+sampleFileName <- sampleInfo[sampleInfo$date == "2005-06-10", "filename"] # save file name   
+sampleProbeID <- geneAnnotation[which(geneAnnotation$SYMBOL == "ARPC1A"), "PROBEID"] # save probe ID
+geneExpression[sampleProbeID, sampleFileName]
+~~~
+:::::::::::::::::::::::::
 
 
-> ## Exercise 1: How many samples where processed on 2005-06-27?
->
-> > ## Solution
-> >
-> > ~~~
-> > unique(sampleInfo$date) # check date format
-> > sampleInfo[sampleInfo$date == "2005-06-27",]  
-> > sum(sampleInfo$date == "2005-06-27") # sum of TRUEs     
-> > ~~~
-> > {: .language-r}
-> >
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::::::::::
 
-> ## Exercise 2: How many of the genes represented in this particular technology 
-> are on chromosome Y?
->
-> > ## Solution
-> >
-> > ~~~
-> > unique(geneAnnotation$CHR) # check chromosome spelling  
-> > sum(geneAnnotation$CHR == "chrY", na.rm = TRUE) # remove missing values 
-> > # (NAs) to sum TRUEs
-> > ~~~
-> > {: .language-r}
-> >
-> {: .solution}
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
 
-> ## Exercise 3: What is the log expression value for gene ARPC1A on the one 
-subject that we measured on 2005-06-10?
->
-> > ## Solution
-> >
-> > ~~~
-> > sampleInfo[sampleInfo$date == "2005-06-10",] # June 10 sample 
-> > sampleFileName <- sampleInfo[sampleInfo$date == "2005-06-10", "filename"] # save file name   
-> > sampleProbeID <- geneAnnotation[which(geneAnnotation$SYMBOL == "ARPC1A"), "PROBEID"] # save probe ID   
-> > geneExpression[sampleProbeID, sampleFileName]
-> > ~~~
-> > {: .language-r}
-> {: .solution}
-{: .challenge}
+## Discussion
+What kinds of research questions might you ask of this data?
+What are the dependent (response) and independent variables?
+Turn to a partner and discuss, then share with the group in the collaborative
+document.
 
-> ## Discussion
-> What kinds of research questions might you ask of this data?
-> What are the dependent (response) and independent variables?
-> Turn to a partner and discuss, then share with the group in the collaborative
-> document.
->
-> > ## Solution
-> >
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
