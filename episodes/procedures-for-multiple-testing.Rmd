@@ -53,6 +53,7 @@ Next we define the _error rates_  that we will try to estimate and control.
 Review the matrix below to understand sensitivity, specificity, and error rates.
 
 ![confusion matrix showing specificity, sensitivity and Type I and Type II errors](./fig/confusion-matrix-1.png)
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Discussion

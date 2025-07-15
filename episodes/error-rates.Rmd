@@ -104,17 +104,9 @@ $m_1=0$. Let's run the tests with a sample size of $N=12$ and compute $R$. Our
 procedure will declare any diet achieving a p-value smaller than $\alpha=0.05$ 
 as significant. 
 
-```{r, echo=FALSE}
-library(downloader)
-url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleControlsPopulation.csv"
-filename <- "femaleControlsPopulation.csv"
-if (!file.exists(filename)) download(url,destfile=filename)
-```
-
-
 ```{r}
 set.seed(1)
-population = unlist( read.csv("femaleControlsPopulation.csv") )
+population = unlist( read.csv(file = "./data/femaleControlsPopulation.csv") )
 alpha <- 0.05
 N <- 12
 m <- 10000
@@ -203,20 +195,23 @@ the p-value. When we have a multiple tests situation, we call it the Family Wise
 Error Rate (FWER) and it relates to a technique that is widely used: The 
 Bonferroni Correction.
 
-> ## Discussion
-> Refer to the confusion matrix below showing false positive and false negative
-> rates, along with specificity and sensitivity. Turn to a partner and explain 
-> the following:  
-> How is specificity related to Type I error and false positive rates?  
-> How is sensitivity related to Type II error and false negative rates?  
-> When you are finished discussing,  share with the group in the collaborative
-> document.
->
-> > ## Solution
-> >
-> > 
-> {: .solution}
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+Refer to the confusion matrix below showing false positive and false negative
+rates, along with specificity and sensitivity. Turn to a partner and explain 
+the following:  
+How is specificity related to Type I error and false positive rates?  
+How is sensitivity related to Type II error and false negative rates?  
+When you are finished discussing,  share with the group in the collaborative
+document.
+
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ![confusion matrix showing error rates](./fig/confusion-matrix-2.png)
 

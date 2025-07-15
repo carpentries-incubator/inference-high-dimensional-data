@@ -463,431 +463,448 @@ Pr(SN≤k).
 
 This equation has many uses in the life sciences. We give some examples below.
 
-> ## Exercise 1
-> The probability of conceiving a girl is 0.49. What is the probability that a 
-> family with 4 children has 2 girls and 2 boys (you can assume that the 
-> outcomes are independent)?
-> 
-> > ## Solution
-> > `p <- 0.49`  
-> > `dbinom(2,4,p=p)`  
-> > `dbinom` and `pbinom` are different. `pbinom` is cumulative, whereas 
-> > `dbinom` is for an individual value. Here is a demonstration. They are all 
-> > equal.
-> > `p <- 0.49`  
-> > `dbinom(2,4,p=p)`  
-> > `pbinom(2,4,p=p)`  
-> > `dbinom(0,4,p=p) + dbinom(1,4,p=p) + dbinom(2,4,p=p)`  
-> {: .solution}
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
 
-> ## Exercise 2
-> Use what you learned in Question 1 to answer these questions:
-> What is the probability that a family with 10 children has 6 girls and 4 boys 
-> (assume no twins)?
-> 
-> > ## Solution
-> > `p <- 0.49`  
-> > `dbinom(6,10,p=p)`
-> {: .solution}
-{: .challenge}
+## Exercise 1
+The probability of conceiving a girl is 0.49. What is the probability that a 
+family with 4 children has 2 girls and 2 boys (you can assume that the 
+outcomes are independent)?
 
-> ## Exercise 3
-> The genome has 3 billion bases. About 20% are C, 20% are G, 30% are T, and 30% 
-> are A. Suppose you take a random interval of 20 bases, what is the probability 
-> that the GC-content (proportion of Gs of Cs) is strictly above 0.5 in this 
-> interval?
-> 
-> > ## Solution
-> > `p <- 0.4`  
-> > `pbinom(20,20,p) - pbinom(10,20,p)`
-> {: .solution}
-{: .challenge}
+:::::::::::::::: solution
 
-> ## Exercise 4
-> The probability of winning the lottery is 1 in 175,223,510. If 20,000,000 
-> people buy a ticket, what is the probability that more than one person wins?
-> 
-> > ## Solution
-> > `p <- 1/175233510`  
-> > `N <- 20000000`  
-> > `1 - ppois(1,N*p)`  
-> > `1 - pbinom(1,N,p)`  
-> > Since the poisson distribution is a type of binomial distribution, both 
-> > distributions give the same values.
-> {: .solution}
-{: .challenge}
+`g <- sampleInfo$group`  
+`pvals <- rowttests(geneExpression, factor(g))$p.value`  
+`sum(pvals < 0.05)`  
 
-> ## Exercise 5
-> We can show that the binomial approximation is approximately normal when N
+:::::::::::::::::::::::::
+
+## Exercise 2
+Use what you learned in Question 1 to answer these questions:
+What is the probability that a family with 10 children has 6 girls and 4 boys 
+(assume no twins)?
+
+:::::::::::::::: solution
+
+`p <- 0.49`  
+`dbinom(6,10,p=p)`
+
+:::::::::::::::::::::::::
+
+## Exercise 3
+The genome has 3 billion bases. About 20% are C, 20% are G, 30% are T, and 30% 
+are A. Suppose you take a random interval of 20 bases, what is the probability 
+that the GC-content (proportion of Gs of Cs) is strictly above 0.5 in this 
+interval?
+ 
+:::::::::::::::: solution
+
+`p <- 0.4`  
+`pbinom(20,20,p) - pbinom(10,20,p)`
+
+:::::::::::::::::::::::::
+
+## Exercise 4
+The probability of winning the lottery is 1 in 175,223,510. If 20,000,000 
+people buy a ticket, what is the probability that more than one person wins?
+
+:::::::::::::::: solution
+
+`p <- 1/175233510`  
+`N <- 20000000`  
+`1 - ppois(1,N*p)`  
+`1 - pbinom(1,N,p)`  
+Since the poisson distribution is a type of binomial distribution, both 
+distributions give the same values.
+
+:::::::::::::::::::::::::
+
+## Exercise 5
+We can show that the binomial approximation is approximately normal when N
 is large and p is not too close to 0 or 1. This means that:
-> 
-> SN−E(SN)Var(SN)‾‾‾‾‾‾‾‾√
-> 
-> is approximately normal with mean 0 and SD 1. Using the results for sums of
-> independent random variables, we can show that E(SN)=Np and Var(Sn)=Np(1−p).
-> The genome has 3 billion bases. About 20% are C, 20% are G, 30% are T, and 30% 
-> are A. Suppose you take a random interval of 20 bases, what is the exact 
-> probability that the GC-content (proportion of Gs of Cs) is greater than 0.35 
-> and smaller or equal to 0.45 in this interval?
-> 
-> > ## Solution
-> > `p <- 0.4`  
-> > `pbinom(0.45*20, 20, p) - pbinom(0.35*20,20,p)`  
-> {: .solution}
-{: .challenge}
 
-> ## Exercise 6
-> For the question above, what is the normal approximation to the probability?
-> 
-> > ## Solution
-> > `p <- 0.4`  
-> > `N <- 20`  
-> > `a <- (0.45*20 - N*p) / sqrt(N*p*(1-p))`  
-> > `b <- (0.35*20 - N*p) / sqrt(N*p*(1-p))`  
-> > 
-> > `approx <- pnorm(a) - pnorm(b)`  
-> > `approx`  
-> {: .solution}
-{: .challenge}
+SN−E(SN)Var(SN)‾‾‾‾‾‾‾‾√
 
-> ## Exercise 7
-> Repeat exercise 5, but using an interval of 1000 bases. What is the difference 
-> (in absolute value) between the normal approximation and the exact 
-> distribution of the GC-content being greater than 0.35 and lesser or equal to 
-> 0.45?
-> 
-> > ## Solution
-> > `N <- 1000`  
-> > `p <- 0.4`  
-> > `a <- (0.45*N - N*p) / sqrt(N*p*(1-p))`  
-> > `b <- (0.35*N - N*p) / sqrt(N*p*(1-p))`  
-> > `approx <- pnorm(a) - pnorm(b) `  
-> > 
-> > `exact <- pbinom(0.45*N,N,p) - pbinom(0.35*N,N,p)`  
-> > `exact - approx`  
-> {: .solution}
-{: .challenge}
+is approximately normal with mean 0 and SD 1. Using the results for sums of
+independent random variables, we can show that E(SN)=Np and Var(Sn)=Np(1−p).
+The genome has 3 billion bases. About 20% are C, 20% are G, 30% are T, and 30% 
+are A. Suppose you take a random interval of 20 bases, what is the exact 
+probability that the GC-content (proportion of Gs of Cs) is greater than 0.35 
+and smaller or equal to 0.45 in this interval?
 
-> ## Exercise 8
-> The Cs in our genomes can be methylated or unmethylated. Suppose we have a 
-> large (millions) group of cells in which a proportion p of the Cs of interest 
-> are methylated. We break up the DNA of these cells and randomly select pieces 
-> and end up with N pieces that contain the C we care about. This means that the
-> probability of seeing k methylated Cs is binomial:
-> exact = dbinom(k,N,p)
-> We can approximate this with the normal distribution:
-> `a <- (k+0.5 - N*p)/sqrt(N*p*(1-p))`  
-> `b <- (k-0.5 - N*p)/sqrt(N*p*(1-p))`  
-> `approx = pnorm(a) - pnorm(b)`  
-> Compute the difference approx - exact for:  
-> `N <- c(5,10,50,100,500)`  
-> `p <- seq(0,1,0.25)`  
-> Compare the approximation and exact probability of the proportion of Cs being 
-> p, k=1,…,N−1 plotting the exact versus the approximation for each p and N
-> combination.
-> A) The normal approximation works well when p is close to 0.5 even for small 
-> N=10  
-> B) The normal approximation breaks down when p is close to 0 or 1 even for 
-> large N  
-> C) When N is 100 all approximations are spot on.  
-> D) When p=0.01 the approximation are terrible for N=5,10,30 and only OK for 
-> N=100
-> 
-> > ## Solution
-> > `Ns <- c(5,10,50,100,500)`  
-> >  `Ps <- seq(0,1,0.25)`  
-> >  `mypar(5,5)`  
-> >  `for (i in seq_along(Ns)) {`  
-> >  `  n <- Ns[[i]]`  
-> >  `  k <- seq(1:n-1)`  
-> >  `  for (j in seq_along(Ps)) {`  
-> >  `    p <- Ps[[j]]`  
-> >  `    exact = dbinom(k, n, p)`  
-> >  `    a = (k+0.5- n*p)/sqrt(n*p*(1-p))`  
-> >  `    b = (k-0.5- n*p)/sqrt(n*p*(1-p))`  
-> >  `    approx = pnorm(a) - pnorm(b)`  
-> >  `    qqplot(exact,approx,xlab='exact',ylab='approx',`  
-> >  `           main = paste0('N=',n,' ','p=',p))`  
-> >  `    abline(0,1)`  
-> >  `  }`  
-> >  `}`  
-> > The answer is C: When N is 100 all approximations are spot on. When p is 
-> > close to 0 or 1, the normal distribution breaks down even at N = 100.
-> {: .solution}
-{: .challenge}
+:::::::::::::::: solution
 
-> ## Exercise 9
-> We saw in the previous question that when p is very small, the normal 
-> approximation breaks down. If N is very large, then we can use the Poisson
-> approximation.  
-> Earlier we computed 1 or more people winning the lottery when the probability 
-> of winning was 1 in 175,223,510 and 20,000,000 people bought a ticket. Using 
-> the binomial, we can compute the probability of exactly two people winning to 
-> be:
-> 
-> `N <- 20000000`
-> `p <- 1/175223510`
-> `dbinom(2,N,p)`
-> 
-> If we were to use the normal approximation, we would greatly underestimate 
-> this:
-> 
-> `a <- (2+0.5 - N*p)/sqrt(N*p*(1-p))`
-> `b <- (2-0.5 - N*p)/sqrt(N*p*(1-p))`
-> `pnorm(a) - pnorm(b)`
-> 
-> To use the Poisson approximation here, use the rate λ=Np
-> 
-> representing the number of people per 20,000,000 that win the lottery. Note 
-> how much better the approximation is:
-> 
-> `dpois(2,N*p)`
-> 
-> In this case. it is practically the same because N is very large and Np is not 
-> 0. These are the assumptions needed for the Poisson to work. What is the 
-> Poisson approximation for more than one person winning?
-> 
-> > ## Solution
-> > `1 - ppois(1,N*p)`
-> {: .solution}
-{: .challenge}
+`p <- 0.4`  
+`pbinom(0.45*20, 20, p) - pbinom(0.35*20,20,p)`  
 
-> ## Exercise 10
-> Now we are going to explore if palindromes are over-represented in some part 
-> of the HCMV genome. Make sure you have the latest version of the dagdata, load 
-> the palindrome data from the Human cytomegalovirus genome, and plot locations 
-> of palindromes on the genome for this virus:
-> 
-> `library(dagdata)`  
-> `data(hcmv)`  
-> `plot(locations,rep(1,length(locations)),ylab="",yaxt="n")`  
-> 
-> These palindromes are quite rare, and therefore p is very small. If we break 
-> the genome into bins of 4000 basepairs, then we have Np not so small and we 
-> might be able to use Poisson to model the number of palindromes in each bin:
-> 
-> `breaks=seq(0,4000*round(max(locations)/4000),4000)`
-> `tmp=cut(locations,breaks)`
-> `counts=as.numeric(table(tmp))`
-> 
-> So if our model is correct, counts should follow a Poisson distribution. The
-> distribution seems about right:
-> 
-> `hist(counts)`
-> 
-> So let X1,…,Xn be the random variables representing counts then 
-> Pr(Xi=k)=λk/k!exp(−λ) and to fully describe this distribution, we need to know
-> λ. For this we will use MLE. We can write the likelihood described in book in 
-> R. For example, for λ=4 we have:
-> 
-> `probs <- dpois(counts,4)`
-> `likelihood <- prod(probs)`
-> `likelihood`
-> 
-> Notice that it’s a tiny number. It is usually more convenient to compute 
-> log-likelihoods:
-> 
-> `logprobs <- dpois(counts,4,log=TRUE)`  
-> `loglikelihood <- sum(logprobs)`  
-> `loglikelihood`  
-> 
-> Now write a function that takes λ and the vector of counts as input and 
-> returns the log-likelihood. Compute this log-likelihood for lambdas =
-> `seq(0,15,len=300)` and make a plot. What value of lambdas maximizes the 
-> log-likelihood?
-> 
-> > ## Solution
-> > `loglike = function(lambdas) {`  
-> > `  logprobs <- dpois(counts,lambdas,log=T)`  
-> > `  loglikelihood <- sum(logprobs)`  
-> > `  return(loglikelihood)`  
-> > `}`  
-> > `lambdas <- seq(0,15,len=300)`  
-> > `log_res <- exp(sapply(lambdas,loglike))`  
-> > `optim_lambda <- lambdas[which(log_res == max(log_res))]`  
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::
 
-> ## Exercise 11
-> The point of collecting this dataset was to try to determine if there is a 
-> region of the genome that has a higher palindrome rate than expected. We can 
-> create a plot and see the counts per location:
-> 
-> `library(dagdata)`  
-> `data(hcmv)`  
-> `breaks=seq(0,4000*round(max(locations)/4000),4000)`  
-> `tmp=cut(locations,breaks)`  
-> `counts=as.numeric(table(tmp))`  
-> `binLocation=(breaks[-1]+breaks[-length(breaks)])/2`  
-> `plot(binLocation,counts,type="l",xlab=)`  
-> 
-> What is the center of the bin with the highest count?
-> 
-> > ## Solution
-> > `binLocation[which(counts == max(counts))]`
-> {: .solution}
-{: .challenge}
+## Exercise 6
+For the question above, what is the normal approximation to the probability?
 
-> ## Exercise 12
-> What is the maximum count?
-> 
-> > ## Solution
-> > `max(counts)`
-> {: .solution}
-{: .challenge}
+:::::::::::::::: solution
 
-> ## Exercise 13
-> Once we have identified the location with the largest palindrome count, we 
-> want to know if we could see a value this big by chance. If X is a Poisson 
-> random variable with rate:
-> 
-> `lambda = mean(counts[ - which.max(counts) ])`  
-> 
-> What is the probability of seeing a count of 14 or more?
-> 
-> > ## Solution
-> > `1 - ppois(13, lambda)`
-> {: .solution}
-{: .challenge}
+`p <- 0.4`  
+`N <- 20`  
+`a <- (0.45*20 - N*p) / sqrt(N*p*(1-p))`  
+`b <- (0.35*20 - N*p) / sqrt(N*p*(1-p))`  
 
-> ## Exercise 14
-> So we obtain a p-value smaller than 0.001 for a count of 14. Why is it 
-> problematic to report this p-value as strong evidence of a location that is
-> different?
-> 
-> A) Poisson in only an approximation.  
-> B) We selected the highest region out of 57 and need to adjust for multiple 
-> testing.  
-> C) λ is an estimate, a random variable, and we didn’t take into account its
-> variability.  
-> D) We don’t know the effect size.
-> 
-> > ## Solution
-> > The answer is B: We selected the highest region out of 57 and need to adjust 
-> > for multiple testing. Answer A is wrong because we do use normal 
-> > approximation in t-test to get a p-value, so there is nothing wrong with 
-> > using approximation. Answer B is correct because the p-value that we 
-> > obtained is from a comparison against the sample mean (z score = 0) rather 
-> > than all other counts. Therefore, the p-value must be corrected (ex. 
-> > Bonferroni’s procedure). Answer C is wrong because p value can also be a 
-> > random variable, but this answer choice implies that p-value is not a random 
-> > variable. Answer D is wrong because effect size is irrelevant.
-> {: .solution}
-{: .challenge}
+`approx <- pnorm(a) - pnorm(b)`  
+`approx`  
 
-> ## Exercise 15
-> Use the Bonferonni correction to determine the p-value cut-off that guarantees 
-> a FWER of 0.05. What is this p-value cutoff?
-> 
-> > ## Solution
-> > `0.05/length(counts)`
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::
 
-> ## Exercise 16
-> Create a qq-plot to see if our Poisson model is a good fit:
-> 
-> `ps <- (seq(along=counts) - 0.5)/length(counts)`  
-> `lambda <- mean( counts[ -which.max(counts)])`  
-> `poisq <- qpois(ps,lambda)`  
-> `plot(poisq,sort(counts))`  
-> `abline(0,1)`  
-> 
-> How would you characterize this qq-plot?
-> A) Poisson is a terrible approximation.  
-> B) Poisson is a very good approximation except for one point that we actually 
-> think is a region of interest.  
-> C) There are too many 1s in the data.  
-> D) A normal distribution provides a better approximation.  
-> 
-> > ## Solution
-> > The answer is B. You can check whether the palindrome counts are well 
-> > approximated by the normal distribution.  
-> > `qqnorm(sort(counts))`
-> {: .solution}
-{: .challenge}
+## Exercise 7
+Repeat exercise 5, but using an interval of 1000 bases. What is the difference 
+(in absolute value) between the normal approximation and the exact 
+distribution of the GC-content being greater than 0.35 and lesser or equal to 
+0.45?
 
-> ## Exercise 17
-> Load the tissuesGeneExpression data library
-> 
-> `library(tissuesGeneExpression)`   
-> 
-> Now load this data and select the columns related to endometrium:
-> 
-> `library(genefilter)`   
-> `y = e[,which(tissue=="endometrium")]`   
-> 
-> This will give you a matrix y with 15 samples. Compute the across sample 
-> variance for the first three samples. Then make a qq-plot to see if the data 
-> follow a normal distribution. Which of the following is true?
-> A) With the exception of a handful of outliers, the data follow a normal
-> distribution.  
-> B) The variance does not follow a normal distribution, but taking the square 
-> root fixes this.  
-> C) The normal distribution is not usable here: the left tail is over estimated 
-> and the right tail is underestimated.  
-> D) The normal distribution fits the data almost perfectly.
-> 
-> > ## Solution
-> > `vars <- rowVars(y[,1:3])`   
-> > `length(vars)`   
-> > `mypar(1,2)`   
-> > `qqnorm(sqrt(vars))` # choice B is false   
-> > `qqnorm(vars)` # choice A and D are false   
-> > The answer is C.
-> {: .solution}
-{: .challenge}
+:::::::::::::::: solution
 
-> ## Exercise 18
-> Now fit an F-distribution with 14 degrees of freedom using the fitFDist 
-> function in the limma package:
-> 
-> > ## Solution
-> > `library(limma)`  
-> > `res <- fitFDist(vars,14)`  
-> > `res`  
-> {: .solution}
-{: .challenge}
+`N <- 1000`  
+`p <- 0.4`  
+`a <- (0.45*N - N*p) / sqrt(N*p*(1-p))`  
+`b <- (0.35*N - N*p) / sqrt(N*p*(1-p))`  
+`approx <- pnorm(a) - pnorm(b) `  
 
-> ## Exercise 19
-> Now create a qq-plot of the observed sample variances versus the 
-> F-distribution quantiles. Which of the following best describes the qq-plot?
-> A) The fitted F-distribution provides a perfect fit.  
-> B) If we exclude the lowest 0.1% of the data, the F-distribution provides a 
-> good fit.  
-> C) The normal distribution provided a better fit.  
-> D) If we exclude the highest 0.1% of the data, the F-distribution provides a 
-> good fit.
-> 
-> > ## Solution
-> > `pf <- (seq(along=vars)-0.5)/length(vars)`  
-> > `theory <- qf(pf,14,res$df2) # theoretical quantiles from F distribution`    
-> > `mypar(1,2)`  
-> > `qqplot(theory, sort(vars), xlab = 'theory', ylab ='obs') # F approximation` 
-> > `vs variance from the data`
-> > `qqnorm(sort(vars)) # normal approximation vs variance from the data`  
-> > The answer is D: If we exclude the highest 0.1% of the data, the 
-> > F-distribution provides a good fit. Actually I do not think answer is 
-> > entirely correct but this is the most appropriate one. Even if we exclude 
-> > the top 0.1% there are still more outliers to remove. Here is a 
-> > demonstration.
-> > 
-> > `vars_sort <- sort(vars)`  
-> > `vars_excl <- vars_sort[1:18000]` # 18000 out of 22215 kept = 81%  
-> > `pf_excl <- (seq(along=vars_excl)-0.5)/length(vars_excl)`  
-> > `theory <- qf(pf_excl,14,res$df2)`  
-> > 
-> > `mypar(2,2)`  
-> > `qqplot(theory,vars_excl, xlab = 'theory',ylab='obs',`  
-> > `       main = 'all data compared with F-approximation')`  
-> > `qqplot(vars_excl,theory, xlim = c(0,0.2),`  
-> > `       ylim = c(0,100), main = 'zoomed in')`  
-> > `qqnorm(vars_excl, main = 'normal qqplot') # comparing with normal `
-> > `approximation with filtered variance (81% kept)`  
-> > Even if I keep up to 81% of the values, F-distribution 
-> {: .solution}
-{: .challenge}
+`exact <- pbinom(0.45*N,N,p) - pbinom(0.35*N,N,p)`  
+`exact - approx`  
+
+:::::::::::::::::::::::::
+
+## Exercise 8
+The Cs in our genomes can be methylated or unmethylated. Suppose we have a 
+large (millions) group of cells in which a proportion p of the Cs of interest 
+are methylated. We break up the DNA of these cells and randomly select pieces 
+and end up with N pieces that contain the C we care about. This means that the
+probability of seeing k methylated Cs is binomial:
+exact = dbinom(k,N,p)
+We can approximate this with the normal distribution:
+`a <- (k+0.5 - N*p)/sqrt(N*p*(1-p))`  
+`b <- (k-0.5 - N*p)/sqrt(N*p*(1-p))`  
+`approx = pnorm(a) - pnorm(b)`  
+Compute the difference approx - exact for:  
+`N <- c(5,10,50,100,500)`  
+`p <- seq(0,1,0.25)`  
+Compare the approximation and exact probability of the proportion of Cs being 
+p, k=1,…,N−1 plotting the exact versus the approximation for each p and N
+combination.
+A) The normal approximation works well when p is close to 0.5 even for small 
+N=10  
+B) The normal approximation breaks down when p is close to 0 or 1 even for 
+large N  
+C) When N is 100 all approximations are spot on.  
+D) When p=0.01 the approximation are terrible for N=5,10,30 and only OK for 
+N=100
+
+:::::::::::::::: solution
+
+`Ns <- c(5,10,50,100,500)`  
+ `Ps <- seq(0,1,0.25)`  
+ `mypar(5,5)`  
+ `for (i in seq_along(Ns)) {`  
+ `  n <- Ns[[i]]`  
+ `  k <- seq(1:n-1)`  
+ `  for (j in seq_along(Ps)) {`  
+ `    p <- Ps[[j]]`  
+ `    exact = dbinom(k, n, p)`  
+ `    a = (k+0.5- n*p)/sqrt(n*p*(1-p))`  
+ `    b = (k-0.5- n*p)/sqrt(n*p*(1-p))`  
+ `    approx = pnorm(a) - pnorm(b)`  
+ `    qqplot(exact,approx,xlab='exact',ylab='approx',`  
+ `           main = paste0('N=',n,' ','p=',p))`  
+ `    abline(0,1)`  
+ `  }`  
+ `}`  
+The answer is C: When N is 100 all approximations are spot on. When p is 
+close to 0 or 1, the normal distribution breaks down even at N = 100.
+
+:::::::::::::::::::::::::
+
+## Exercise 9
+We saw in the previous question that when p is very small, the normal 
+approximation breaks down. If N is very large, then we can use the Poisson
+approximation.  
+Earlier we computed 1 or more people winning the lottery when the probability 
+of winning was 1 in 175,223,510 and 20,000,000 people bought a ticket. Using 
+the binomial, we can compute the probability of exactly two people winning to 
+be:
+
+`N <- 20000000`
+`p <- 1/175223510`
+`dbinom(2,N,p)`
+
+If we were to use the normal approximation, we would greatly underestimate 
+this:
+
+`a <- (2+0.5 - N*p)/sqrt(N*p*(1-p))`
+`b <- (2-0.5 - N*p)/sqrt(N*p*(1-p))`
+`pnorm(a) - pnorm(b)`
+
+To use the Poisson approximation here, use the rate λ=Np
+
+representing the number of people per 20,000,000 that win the lottery. Note 
+how much better the approximation is:
+
+`dpois(2,N*p)`
+
+In this case. it is practically the same because N is very large and Np is not 
+0. These are the assumptions needed for the Poisson to work. What is the 
+Poisson approximation for more than one person winning?
+
+:::::::::::::::: solution
+
+`1 - ppois(1,N*p)`
+
+:::::::::::::::::::::::::
+
+## Exercise 10
+Now we are going to explore if palindromes are over-represented in some part 
+of the HCMV genome. Make sure you have the latest version of the dagdata, load 
+the palindrome data from the Human cytomegalovirus genome, and plot locations 
+of palindromes on the genome for this virus:
+
+`library(dagdata)`  
+`data(hcmv)`  
+`plot(locations,rep(1,length(locations)),ylab="",yaxt="n")`  
+
+These palindromes are quite rare, and therefore p is very small. If we break 
+the genome into bins of 4000 basepairs, then we have Np not so small and we 
+might be able to use Poisson to model the number of palindromes in each bin:
+
+`breaks=seq(0,4000*round(max(locations)/4000),4000)`
+`tmp=cut(locations,breaks)`
+`counts=as.numeric(table(tmp))`
+
+So if our model is correct, counts should follow a Poisson distribution. The
+distribution seems about right:
+
+`hist(counts)`
+
+So let X1,…,Xn be the random variables representing counts then 
+Pr(Xi=k)=λk/k!exp(−λ) and to fully describe this distribution, we need to know
+λ. For this we will use MLE. We can write the likelihood described in book in 
+R. For example, for λ=4 we have:
+
+`probs <- dpois(counts,4)`
+`likelihood <- prod(probs)`
+`likelihood`
+
+Notice that it’s a tiny number. It is usually more convenient to compute 
+log-likelihoods:
+
+`logprobs <- dpois(counts,4,log=TRUE)`  
+`loglikelihood <- sum(logprobs)`  
+`loglikelihood`  
+
+Now write a function that takes λ and the vector of counts as input and 
+returns the log-likelihood. Compute this log-likelihood for lambdas =
+`seq(0,15,len=300)` and make a plot. What value of lambdas maximizes the 
+log-likelihood?
+
+:::::::::::::::: solution
+
+`loglike = function(lambdas) {`  
+`  logprobs <- dpois(counts,lambdas,log=T)`  
+`  loglikelihood <- sum(logprobs)`  
+`  return(loglikelihood)`  
+`}`  
+`lambdas <- seq(0,15,len=300)`  
+`log_res <- exp(sapply(lambdas,loglike))`  
+`optim_lambda <- lambdas[which(log_res == max(log_res))]`  
+
+:::::::::::::::::::::::::
+
+## Exercise 11
+The point of collecting this dataset was to try to determine if there is a 
+region of the genome that has a higher palindrome rate than expected. We can 
+create a plot and see the counts per location:
+
+`library(dagdata)`  
+`data(hcmv)`  
+`breaks=seq(0,4000*round(max(locations)/4000),4000)`  
+`tmp=cut(locations,breaks)`  
+`counts=as.numeric(table(tmp))`  
+`binLocation=(breaks[-1]+breaks[-length(breaks)])/2`  
+`plot(binLocation,counts,type="l",xlab=)`  
+
+What is the center of the bin with the highest count?
+
+:::::::::::::::: solution
+
+`binLocation[which(counts == max(counts))]`
+
+:::::::::::::::::::::::::
+
+## Exercise 12
+What is the maximum count?
+ 
+:::::::::::::::: solution
+
+`max(counts)`
+
+:::::::::::::::::::::::::
+
+## Exercise 13
+Once we have identified the location with the largest palindrome count, we 
+want to know if we could see a value this big by chance. If X is a Poisson 
+random variable with rate:
+
+`lambda = mean(counts[ - which.max(counts) ])`  
+
+What is the probability of seeing a count of 14 or more?
+
+:::::::::::::::: solution
+
+`1 - ppois(13, lambda)`
+
+:::::::::::::::::::::::::
+
+## Exercise 14
+So we obtain a p-value smaller than 0.001 for a count of 14. Why is it 
+problematic to report this p-value as strong evidence of a location that is
+different?
+
+A) Poisson in only an approximation.  
+B) We selected the highest region out of 57 and need to adjust for multiple 
+testing.  
+C) λ is an estimate, a random variable, and we didn’t take into account its
+variability.  
+D) We don’t know the effect size.
+
+:::::::::::::::: solution
+
+The answer is B: We selected the highest region out of 57 and need to adjust 
+for multiple testing. Answer A is wrong because we do use normal 
+approximation in t-test to get a p-value, so there is nothing wrong with 
+using approximation. Answer B is correct because the p-value that we 
+obtained is from a comparison against the sample mean (z score = 0) rather 
+than all other counts. Therefore, the p-value must be corrected (ex. 
+Bonferroni’s procedure). Answer C is wrong because p value can also be a 
+random variable, but this answer choice implies that p-value is not a random 
+variable. Answer D is wrong because effect size is irrelevant.
+
+:::::::::::::::::::::::::
+
+## Exercise 15
+Use the Bonferonni correction to determine the p-value cut-off that guarantees 
+a FWER of 0.05. What is this p-value cutoff?
+
+:::::::::::::::: solution
+
+`0.05/length(counts)`
+
+:::::::::::::::::::::::::
+
+## Exercise 16
+Create a qq-plot to see if our Poisson model is a good fit:
+
+`ps <- (seq(along=counts) - 0.5)/length(counts)`  
+`lambda <- mean( counts[ -which.max(counts)])`  
+`poisq <- qpois(ps,lambda)`  
+`plot(poisq,sort(counts))`  
+`abline(0,1)`  
+
+How would you characterize this qq-plot?
+A) Poisson is a terrible approximation.  
+B) Poisson is a very good approximation except for one point that we actually 
+think is a region of interest.  
+C) There are too many 1s in the data.  
+D) A normal distribution provides a better approximation.  
+
+:::::::::::::::: solution
+
+The answer is B. You can check whether the palindrome counts are well 
+approximated by the normal distribution.  
+`qqnorm(sort(counts))`
+
+:::::::::::::::::::::::::
+
+## Exercise 17
+Load the tissuesGeneExpression data library
+
+`library(tissuesGeneExpression)`   
+
+Now load this data and select the columns related to endometrium:
+
+`library(genefilter)`   
+`y = e[,which(tissue=="endometrium")]`   
+
+This will give you a matrix y with 15 samples. Compute the across sample 
+variance for the first three samples. Then make a qq-plot to see if the data 
+follow a normal distribution. Which of the following is true?
+A) With the exception of a handful of outliers, the data follow a normal
+distribution.  
+B) The variance does not follow a normal distribution, but taking the square 
+root fixes this.  
+C) The normal distribution is not usable here: the left tail is over estimated 
+and the right tail is underestimated.  
+D) The normal distribution fits the data almost perfectly.
+
+:::::::::::::::: solution
+
+`vars <- rowVars(y[,1:3])`   
+`length(vars)`   
+`mypar(1,2)`   
+`qqnorm(sqrt(vars))` # choice B is false   
+`qqnorm(vars)` # choice A and D are false   
+The answer is C.
+
+:::::::::::::::::::::::::
+
+## Exercise 18
+Now fit an F-distribution with 14 degrees of freedom using the fitFDist 
+function in the limma package:
+
+:::::::::::::::: solution
+
+`library(limma)`  
+`res <- fitFDist(vars,14)`  
+`res`  
+
+:::::::::::::::::::::::::
+
+## Exercise 19
+Now create a qq-plot of the observed sample variances versus the 
+F-distribution quantiles. Which of the following best describes the qq-plot?
+A) The fitted F-distribution provides a perfect fit.  
+B) If we exclude the lowest 0.1% of the data, the F-distribution provides a 
+good fit.  
+C) The normal distribution provided a better fit.  
+D) If we exclude the highest 0.1% of the data, the F-distribution provides a 
+good fit.
+
+:::::::::::::::: solution
+
+`pf <- (seq(along=vars)-0.5)/length(vars)`  
+`theory <- qf(pf,14,res$df2) # theoretical quantiles from F distribution`    
+`mypar(1,2)`  
+`qqplot(theory, sort(vars), xlab = 'theory', ylab ='obs') # F approximation` 
+`vs variance from the data`
+`qqnorm(sort(vars)) # normal approximation vs variance from the data`  
+The answer is D: If we exclude the highest 0.1% of the data, the 
+F-distribution provides a good fit. Actually I do not think answer is 
+entirely correct but this is the most appropriate one. Even if we exclude 
+the top 0.1% there are still more outliers to remove. Here is a 
+demonstration.
+
+`vars_sort <- sort(vars)`  
+`vars_excl <- vars_sort[1:18000]` # 18000 out of 22215 kept = 81%  
+`pf_excl <- (seq(along=vars_excl)-0.5)/length(vars_excl)`  
+`theory <- qf(pf_excl,14,res$df2)`  
+
+`mypar(2,2)`  
+`qqplot(theory,vars_excl, xlab = 'theory',ylab='obs',`  
+`       main = 'all data compared with F-approximation')`  
+`qqplot(vars_excl,theory, xlim = c(0,0.2),`  
+`       ylim = c(0,100), main = 'zoomed in')`  
+`qqnorm(vars_excl, main = 'normal qqplot') # comparing with normal `
+`approximation with filtered variance (81% kept)`  
+Even if I keep up to 81% of the values, F-distribution   
+
+:::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 

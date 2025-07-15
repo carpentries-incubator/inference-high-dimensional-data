@@ -65,21 +65,23 @@ and 1 and we can define a rate by considering the average of $Q$. To better
 understand this concept here, we compute $Q$ for the procedure: call everything 
 p-value < 0.05 significant.
 
-> ## Discussion
-> Refer to the confusion matrix below showing false positive, false negative,
-> and false discovery rates, along with specificity and sensitivity. Turn to a 
-> partner and explain the following:  
-> How is the false discovery rate related to Type I error and false positive 
-> rates?  
-> How is sensitivity related to the false discovery rate?  
-> When you are finished discussing,  share with the group in the collaborative
-> document.
->
-> > ## Solution
-> >
-> > 
-> {: .solution}
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+Refer to the confusion matrix below showing false positive, false negative,
+and false discovery rates, along with specificity and sensitivity. Turn to a 
+partner and explain the following:  
+How is the false discovery rate related to Type I error and false positive 
+rates?  
+How is sensitivity related to the false discovery rate?  
+When you are finished discussing,  share with the group in the collaborative
+document.
+
+:::::::::::::::: solution
+
+:::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ![confusion matrix showing error rates](./fig/confusion-matrix-3.png)
 
