@@ -22,15 +22,12 @@ title: Setup
     dir.create("./results")
     ~~~
 
-3. Please download the following file and place it in your `data` folder. You 
-can download the file from the URL below and move the file the same way that 
-you would for downloading and moving any other kind of data.
-
-Alternatively, you can copy and paste the following into the R console to 
-download the data.
+3. Please download the following files and place it in your `data` folder. You 
+can copy and paste the following into the R console to download the data.
 
 ~~~
 download.file(url = "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleControlsPopulation.csv", destfile = "data/femaleControlsPopulation.csv")
+genomicsclass/GSE5859Subset
 ~~~
 
 ## Software Setup
