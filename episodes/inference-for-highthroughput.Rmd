@@ -99,7 +99,6 @@ pvals <- replicate(B, {
   })
 hist(pvals)
 ```
-![P-value histogram for 10,000 tests in which null hypothesis is true.](./fig/pvalue_hist-1.png) 
 As implied by the histogram, in this case the distribution of the p-value is 
 uniformly distributed. In fact, we can show theoretically that when the null 
 hypothesis is true, this is always the case. For the case in which we use the 
@@ -213,17 +212,8 @@ works.
 Before we continue, we should point out that the above implementation is very 
 inefficient. There are several faster implementations that perform t-test for 
 high-throughput data. We make use of a function that is not available from CRAN, 
-but rather from the Bioconductor project. 
-
-To download and install packages from Bioconductor, we can use the `install_bioc` function in `rafalib` to install the package:
-
-
-```{r, eval=FALSE}
-install_bioc("genefilter")
-```
-
-Now we can show that this function is much faster than our code above and 
-produce practically the same answer:
+but rather from the Bioconductor project. Now we can show that this function is 
+much faster than our code above and produce practically the same answer:
 
 ```{r, message=FALSE}
 library(genefilter)
@@ -253,8 +243,6 @@ head(pvals)
 ```{r p_value_histogram, eval=FALSE}
 hist(pvals)
 ```
-
-![P-value histogram for 1,000 t-tests of samples of size 12.](./fig/p_value_histogram-1.png) 
 
 
 ::::::::::::::::::::::::::::::::::::: challenge

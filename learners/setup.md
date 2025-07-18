@@ -27,7 +27,6 @@ can copy and paste the following into the R console to download the data.
 
 ~~~
 download.file(url = "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleControlsPopulation.csv", destfile = "data/femaleControlsPopulation.csv")
-genomicsclass/GSE5859Subset
 ~~~
 
 ## Software Setup
@@ -64,13 +63,18 @@ code in the Console for each package.
 
     ~~~
     library(devtools)
+    library(BiocManager)
+    library(here)
+    library(rafalib)
+    library(matrixStats)
     ~~~
-
-    Repeat the command above with the other packages you just installed.
-
-5. We will also use packages available only on Github. Once the devtools library 
-is loaded you will be able to install packages from Github using 
-`install_github()`. You must install  these packages from the Console. They will 
+    
+5. Several of the  examples we are going to use in the following sections are 
+best obtained through R packages. These are available from GitHub and can be 
+installed using the `install_github` function from the `devtools` package. 
+Microsoft Windows users might need to follow 
+[these instructions](https://github.com/genomicsclass/windows) to properly 
+install `devtools`.  You must install  these packages from the Console. They will 
 not be  available from the RStudio Packages tab.
 
     ~~~

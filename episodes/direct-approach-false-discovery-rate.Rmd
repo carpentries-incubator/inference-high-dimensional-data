@@ -105,8 +105,6 @@ abline(h= pi0)
 print(pi0) ##this is close to the try pi0=0.9
 ```
 
-![p-value histogram with pi0 estimate.](./fig/pi0_estimate.png)
-
 With this estimate in place we can, for example, alter the Benjamini and 
 Hochberg procedures to select the $k$ to be the largest value so that: 
 
@@ -130,6 +128,7 @@ we also obtain the estimate of $\hat{\pi}_0$:
 ```{r}
 res$pi0
 ```
+
 This function uses a more sophisticated approach at estimating $\pi_0$ than what 
 is described above.
 

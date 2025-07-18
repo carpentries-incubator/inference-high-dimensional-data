@@ -164,7 +164,6 @@ plot(y[1,], y[2,], xlab="Twin 1 (standardized height)",
 points(y[1,1:2], y[2,1:2], col=2, pch=16)
 ```
 
-![](./fig/simulate_twin_heights.png)
 To help with the illustration, think of this as high-throughput gene expression 
 data with the twin pairs representing the $N$ samples and the two heights 
 representing gene expression from two genes. 
@@ -206,7 +205,6 @@ points(y[1,1:2],y[2,1:2],col=2,pch=16)
 plot(z[1,],z[2,],xlim=thelim,ylim=thelim,xlab="Average height",ylab="Difference in height")
 points(z[1,1:2],z[2,1:2],col=2,pch=16)
 ```
-![](./fig/simulate_twin_heights_again.png)
 
  How do we perform a PCA?
 
@@ -237,12 +235,10 @@ variables in the prostate dataset, so that we can create fewer variables
 representing clinical markers of cancer progression. Standard PCAs are carried
 out using continuous variables only.
 
-First, we will examine the `Prostate` dataset which can be downloaded as part
-of the **`lasso2`** package:
+First, we will examine the `Prostate` dataset.
 
-```{r lasso2, message=FALSE}
-library("lasso2")
-data("Prostate")
+```{r lasso2_prostate_data, message=FALSE}
+load("./data/Prostate.rda")
 ```
 
 ```{r prostate}
@@ -269,8 +265,6 @@ par(mfrow = c(1, 2))
 hist(pros2$lweight, breaks = "FD")
 hist(pros2$lbph, breaks = "FD")
 ```
-
-![Compare variances between log-transformed prostate weight and benign enlargement](./fig/var-hist.png)
 
 Note that variance is greatest for `lbph` and lowest for `lweight`. It is clear
 from this output that we need to scale each of these variables before including
@@ -365,14 +359,11 @@ varDF <- data.frame(Dimensions = 1:length(varExp), varExp = varExp)
 plot(varDF)
 ```
 
-![Screeplot showing proportion of variance explained by each principal component.](./fig/vardf-plot.png)
-
 The screeplot shows that the first principal component explains most of the
 variance in the data (>50%) and each subsequent principal component explains
 less and less of the total variance. The first two principal components
 explain >70% of variance in the data. But what do these two principal
 components mean?
-
 
 ## What are loadings and principal component scores?
 
@@ -599,6 +590,7 @@ contribute to explain the remaining variance or choose an arbitory cut off for
 proportion of variance explained.
 
 ::::::::::::::::::::::::::::::::::::: challenge
+
 ## Exercise 4 
 
 Using the `screeplot()` function in **`PCAtools`**, create a screeplot to show 
@@ -642,6 +634,7 @@ are two functions called `biplot()`, one in the package **`PCAtools`** and one i
 **`stats`**. Both functions produce biplots but their scales are different!
 
 ::::::::::::::::::::::::::::::::::::: challenge
+
 ## Exercise 5 
 
 Create a biplot of the first two principal components from your PCA
