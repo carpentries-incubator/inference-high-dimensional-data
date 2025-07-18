@@ -55,7 +55,7 @@ Copy-paste this list of packages into the Install dialog box:
 
     ~~~
     install.packages(c("devtools", "BiocManager", "here", 
-                       "rafalib", "lasso2", "matrixStats"))
+                       "rafalib", "matrixStats"))
     ~~~
 
  4. Once you have installed the packages, load the libraries by checking the box 
@@ -85,9 +85,11 @@ code in the Console.
 
     ~~~
     library(GSE5859Subset)
+    library(GSE5859)
+    library(maPooling)
+    library(tissuesGeneExpression)
     ~~~
 
-    Repeat for each of the packages installed from Github.
 
 7. Finally, we will use Bioconductor packages. Install these packages in the 
 Console:
@@ -103,6 +105,11 @@ running this code in the Console.
 
     ~~~
     library(genefilter)
+    library(SpikeInSubset)
+    library(SummarizedExperiment)
+    library(parathyroidSE)
+    library(Biobase)
+    library(limma)
+    library(qvalue)
+    library(PCAtools)
     ~~~
-
-Repeat for each of the packages installed from Bioconductor.
