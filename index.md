@@ -20,6 +20,18 @@ statistical tests and quantifying uncertainty in a meaningful way. We also
 introduce exploratory data analysis techniques that should be used in 
 conjunction with inference when analyzing high-throughput data.
 
+This lesson presents data analysis concepts featured in 
+[*Data Analysis for the Life Sciences*](https://leanpub.com/dataanalysisforthelifesciences)
+by Rafael A. Irizarry and Michael I. Love. The lesson is adapted from software
+for chapters on
+[Inference for High-Dimensional Data](https://github.com/genomicsclass/labs/tree/master/advinference),
+[Statistical Modeling](https://github.com/genomicsclass/labs/tree/master/modeling) and 
+[Distance and Dimension Reduction](https://github.com/genomicsclass/labs/tree/master/highdim)
+which are published under 
+[this MIT license](https://github.com/genomicsclass/labs?tab=MIT-1-ov-file).
+Adaptation was funded by NIH grant 1R25GM141520 awarded to Dr. Gary Churchill at
+The Jackson Laboratory.
+
 > ## Prerequisites
 >
 >  This lesson assumes basic skills in the R statistical programming language and statistical
