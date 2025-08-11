@@ -68,7 +68,7 @@ Copy-paste this list of packages into the Install dialog box:
 
     ~~~
     install.packages(c("BiocManager", "here", 
-                       "rafalib", "matrixStats"))
+                       "rafalib", "matrixStats", "Brq"))
     ~~~
 
  4. Once you have installed the packages, load the libraries by checking the box 
