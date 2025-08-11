@@ -172,7 +172,7 @@ We are interested in the distance between any two samples. We can compute this
 using `dist`. For example, here is the distance between the two orange points in 
 the figure above:
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 d=dist(t(y))
 as.matrix(d)[1,2]
 ```
@@ -238,7 +238,8 @@ out using continuous variables only.
 First, we will examine the `Prostate` dataset.
 
 ```{r lasso2_prostate_data, message=FALSE}
-load("./data/Prostate.rda")
+library(Brq)
+data("Prostate")
 ```
 
 ```{r prostate}
@@ -332,7 +333,7 @@ Let's look at the relative importance of each component using `summary`.
 summary(pca.pros)
 ```
 
-```{R, echo = FALSE}
+```{r}
 # Get proportions of variance explained by each PC (rounded to 2 DP)
 prop.var <- round(summary(pca.pros)$importance["Proportion of Variance", ], 2) *
   100
