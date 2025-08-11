@@ -32,12 +32,9 @@ which are published under
 Adaptation was funded by NIH grant 1R25GM141520 awarded to Dr. Gary Churchill at
 The Jackson Laboratory.
 
-> ## Prerequisites
->
->  This lesson assumes basic skills in the R statistical programming language and statistical
-> concepts including population sampling and interpreting p-values.
->
-> To get started, follow the directions in the Setup tab to get access to the required software 
-> and data for this workshop.
->
-{: .prereq}
+::: callout
+This lesson assumes basic skills in the R statistical programming language.
+If you know how install packages, load libraries and data, and work with common 
+R data structures (e.g. vectors, data frames, matrices) you are ready for this
+course.
+:::
