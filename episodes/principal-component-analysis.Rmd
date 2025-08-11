@@ -451,7 +451,7 @@ We will first load the microarray breast cancer gene expression data and
 associated metadata, downloaded from the
 [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE2990).
 
-```{r se, message=FALSE}
+```{r se, message=FALSE, warning=FALSE}
 library("SummarizedExperiment")
 cancer <- readRDS("./data/cancer_expression.rds")
 mat <- assay(cancer)

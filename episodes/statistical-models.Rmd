@@ -138,7 +138,7 @@ would be quite high for low abundance genes.
 
 In this section we will use the data stored in this dataset:
 
-```{r, message=FALSE}
+```{r, message=FALSE,warning=FALSE}
 library(parathyroidSE) ##available from Bioconductor
 data(parathyroidGenesSE)
 se <- parathyroidGenesSE
@@ -194,7 +194,7 @@ read in the locations of the palindrome and then count the number of palindromes
 in each 4,000 basepair segments.
 
 ```{r, palindrome_count_histogram, fig.cap="Palindrome count histogram.", warning=FALSE}
-x=read.csv(".data/hcmv.rda")[,2]
+x=read.csv("./data/hcmv.rda")[,2]
 
 breaks=seq(0,4000*round(max(x)/4000),4000)
 tmp=cut(x,breaks)
