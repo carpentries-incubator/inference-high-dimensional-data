@@ -99,36 +99,29 @@ Qs <- res[2,]
 
 
 ``` r
+set.seed(1)
+controls <- matrix(sample(population, N*m, replace=TRUE),nrow=m)
+treatments <-  matrix(sample(population, N*m, replace=TRUE),nrow=m)
+treatments[which(!nullHypothesis),]<-treatments[which(!nullHypothesis),]+delta
+dat <- cbind(controls,treatments)
+pvals <- rowttests(dat,g)$p.value 
 hist(pvals,breaks=seq(0,1,0.05),freq=FALSE)
-```
-
-``` error
-Error: object 'pvals' not found
-```
-
-``` r
 lambda = 0.1
 pi0=sum(pvals> lambda) /((1-lambda)*m)
-```
-
-``` error
-Error: object 'pvals' not found
-```
-
-``` r
 abline(h= pi0)
 ```
 
-``` error
-Error: object 'pi0' not found
-```
+<div class="figure" style="text-align: center">
+<img src="fig/direct-approach-false-discovery-rate-rendered-pi0_estimate-1.png" alt="p-value histogram with pi0 estimate."  />
+<p class="caption">p-value histogram with pi0 estimate.</p>
+</div>
 
 ``` r
 print(pi0) ##this is close to the try pi0=0.9
 ```
 
-``` error
-Error: object 'pi0' not found
+``` output
+[1] 0.9326667
 ```
 
 With this estimate in place we can, for example, alter the Benjamini and 
@@ -146,27 +139,14 @@ In R, this can be computed with the `qvalue` function in the `qvalue` package:
 ``` r
 library(qvalue)
 res <- qvalue(pvals)
-```
-
-``` error
-Error: object 'pvals' not found
-```
-
-``` r
 qvals <- res$qvalues
-```
-
-``` error
-Error in res$qvalues: $ operator is invalid for atomic vectors
-```
-
-``` r
 plot(pvals, qvals)
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'plot': object 'pvals' not found
-```
+<div class="figure" style="text-align: center">
+<img src="fig/direct-approach-false-discovery-rate-rendered-qval_vs_pval-1.png" alt="q-values versus p-values."  />
+<p class="caption">q-values versus p-values.</p>
+</div>
 
 we also obtain the estimate of $\hat{\pi}_0$:
 
@@ -175,8 +155,8 @@ we also obtain the estimate of $\hat{\pi}_0$:
 res$pi0
 ```
 
-``` error
-Error in res$pi0: $ operator is invalid for atomic vectors
+``` output
+[1] 0.9117251
 ```
 
 This function uses a more sophisticated approach at estimating $\pi_0$ than what 

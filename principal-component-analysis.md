@@ -540,14 +540,6 @@ associated metadata, downloaded from the
 
 ``` r
 library("SummarizedExperiment")
-```
-
-``` warning
-Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
-'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
-```
-
-``` r
 cancer <- readRDS("./data/cancer_expression.rds")
 mat <- assay(cancer)
 metadata <- colData(cancer)

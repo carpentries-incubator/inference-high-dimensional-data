@@ -107,7 +107,7 @@ prop.table(tab)
 ``` output
 winners
     0     1     2     3     4 
-0.610 0.319 0.059 0.011 0.001 
+0.618 0.291 0.077 0.012 0.002 
 ```
 
 For cases like this, where $N$ is very large, but $p$ is small enough to make 
@@ -161,19 +161,6 @@ In this section we will use the data stored in this dataset:
 
 ``` r
 library(parathyroidSE) ##available from Bioconductor
-```
-
-``` warning
-Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
-'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
-```
-
-``` warning
-Warning in fun(libname, pkgname): Package 'parathyroidSE' is deprecated and will be removed from
-  Bioconductor version 3.22
-```
-
-``` r
 data(parathyroidGenesSE)
 se <- parathyroidGenesSE
 ```
@@ -241,11 +228,11 @@ in each 4,000 basepair segments.
 
 
 ``` r
-x=read.csv(".data/hcmv.rda")[,2]
+x=read.csv("./data/hcmv.rda")[,2]
 ```
 
 ``` error
-Error in file(file, "rt"): cannot open the connection
+Error in `[.data.frame`(read.csv("./data/hcmv.rda"), , 2): undefined columns selected
 ```
 
 ``` r

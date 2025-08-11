@@ -70,8 +70,8 @@ document.
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-For more on this, see [<iClassification evaluation</i](https://www.nature.com/articles/nmeth.3945) by J. Lever, 
-M. Krzywinski and N. Altman in <iNature Methods</i<b13</b, 603-604 (2016).
+For more on this, see [Classification evaluation](https://www.nature.com/articles/nmeth.3945) by J. Lever, 
+M. Krzywinski and N. Altman in Nature Methods 13, 603-604 (2016).
 
 ## Exercises
 With these exercises we hope to help you further grasp the concept that p-values 
