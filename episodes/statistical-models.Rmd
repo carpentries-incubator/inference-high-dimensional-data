@@ -281,10 +281,7 @@ replicates and the biological replicates.
 
 ```{r, message=FALSE}
 library(Biobase) ##available from Bioconductor
-library(devtools)
-library(maPooling) ##available from course github repo
-
-data(maPooling)
+load("data/maPooling.RData")
 pd=pData(maPooling)
 
 ##determine which samples are bio reps and which are tech reps
@@ -797,9 +794,9 @@ approximated by the normal distribution.
 :::::::::::::::::::::::::
 
 ## Exercise 17
-Load the tissuesGeneExpression data library
+Load the `tissuesGeneExpression` data library
 
-`library(tissuesGeneExpression)`   
+`load("data/tissuesGeneExpression.rda")`
 
 Now load this data and select the columns related to endometrium:
 

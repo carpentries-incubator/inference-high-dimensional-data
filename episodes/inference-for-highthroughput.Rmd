@@ -115,8 +115,7 @@ which is the definition of a uniform distribution.
 
 In this data we have two groups denoted with 0 and 1:
 ```{r}
-library(GSE5859Subset)
-data(GSE5859Subset)
+load("data/GSE5859Subset.rda")
 g <- sampleInfo$group
 g
 ```

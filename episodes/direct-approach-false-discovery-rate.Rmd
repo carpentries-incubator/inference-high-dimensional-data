@@ -147,8 +147,7 @@ asking you to create a Monte Carlo simulation.
 
 ## Exercise 1
 Load the gene expression data:  
-`library(GSE5859Subset)`  
-`data(GSE5859Subset)`  
+`load("episodes/data/GSE5859Subset.rda")`  
 We are interested in comparing gene expression between the two groups defined 
 in the sampleInfo table.
 Compute a p-value for each gene using the function `rowttests` from the 

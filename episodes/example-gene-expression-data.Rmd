@@ -19,6 +19,7 @@ source: Rmd
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
+load("episodes/data/GSE5859Subset.rda")
 ```
 
 # Explore a Gene Expression Dataset
@@ -60,8 +61,7 @@ rows.
 Here is an example from a gene expression dataset:
 
 ```{r}
-library(GSE5859Subset)
-data(GSE5859Subset) ## this loads the three tables
+load("data/GSE5859Subset.rda") ## this loads the three tables
 dim(geneExpression)
 ```
 

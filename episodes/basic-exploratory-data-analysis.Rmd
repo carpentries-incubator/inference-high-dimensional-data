@@ -39,8 +39,7 @@ expression dataset:
 
 ```{r,message=FALSE}
 library(genefilter)
-library(GSE5859Subset)
-data(GSE5859Subset)
+load("data/GSE5859Subset.rda")
 g <- factor(sampleInfo$group)
 results <- rowttests(geneExpression, g)
 pvals <- results$p.value
@@ -115,10 +114,8 @@ available on Github. We "accidentally" use log instead of log2 on one of the
 samples.
 
 ```{r, message=FALSE}
-library(devtools)
 library(Biobase)
-library(GSE5859) 
-data(GSE5859) 
+load("data/GSE5859.rda")
 ge <- exprs(e) ##ge for gene expression
 ge[,49] <- ge[,49]/log2(exp(1)) ##imitate error
 ```

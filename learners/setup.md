@@ -26,7 +26,21 @@ title: Setup
 can copy and paste the following into the R console to download the data.
 
 ~~~
-download.file(url = "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleControlsPopulation.csv", destfile = "data/femaleControlsPopulation.csv")
+download.file(url = "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleControlsPopulation.csv", 
+              destfile = "data/femaleControlsPopulation.csv", 
+              mode = "wb")
+download.file(url = "https://github.com/genomicsclass/GSE5859/raw/refs/heads/master/data/GSE5859.rda",
+              destfile = "data/GSE5859.rda",
+              mode = "wb")
+download.file(url = "https://github.com/genomicsclass/GSE5859Subset/raw/refs/heads/master/data/GSE5859Subset.rda",
+              destfile = "data/GSE5859Subset.rda",
+              mode = "wb")
+download.file(url = "https://github.com/genomicsclass/maPooling/raw/refs/heads/master/data/maPooling.RData",
+              destfile = "data/maPooling.RData",
+              mode = "wb")
+download.file(url = "https://github.com/genomicsclass/tissuesGeneExpression/raw/refs/heads/master/data/tissuesGeneExpression.rda",
+              destfile = "data/tissuesGeneExpression.rda",
+              mode = "wb")
 ~~~
 
 ## Software Setup
@@ -53,7 +67,7 @@ Copy-paste this list of packages into the Install dialog box:
     Alternatively, run the following in the Console.
 
     ~~~
-    install.packages(c("devtools", "BiocManager", "here", 
+    install.packages(c("BiocManager", "here", 
                        "rafalib", "matrixStats"))
     ~~~
 
@@ -62,41 +76,14 @@ next to each package name on the Packages tab, or alternatively running this
 code in the Console for each package.
 
     ~~~
-    library(devtools)
     library(BiocManager)
     library(here)
     library(rafalib)
     library(matrixStats)
     ~~~
     
-5. Several of the  examples we are going to use in the following sections are 
-best obtained through R packages. These are available from GitHub and can be 
-installed using the `install_github` function from the `devtools` package. 
-Microsoft Windows users might need to follow 
-[these instructions](https://github.com/genomicsclass/windows) to properly 
-install `devtools`.  You must install  these packages from the Console. They will 
-not be  available from the RStudio Packages tab.
 
-    ~~~
-    install_github(c("genomicsclass/GSE5859Subset", 
-                     "genomicsclass/GSE5859", 
-                     "genomicsclass/maPooling", 
-                     "genomicsclass/tissuesGeneExpression"))
-    ~~~
-
-6. Once you have installed the packages, load the libraries by running this 
-code in the Console.
-
-    ~~~
-    library(GSE5859Subset)
-    library(GSE5859)
-    library(maPooling)
-    library(tissuesGeneExpression)
-    ~~~
-
-
-7. Finally, we will use Bioconductor packages. Install these packages in the 
-Console:
+5. Install these  Bioconductor packages by running the code in the Console:
 
     ~~~
     BiocManager::install(c("genefilter", "SpikeInSubset", 
@@ -104,7 +91,7 @@ Console:
                            "limma", "qvalue", "PCAtools"))
     ~~~
 
-8. Once you have installed the Bioconductor packages, load the libraries by 
+6. Once you have installed the Bioconductor packages, load the libraries by 
 running this code in the Console.
 
     ~~~
