@@ -18,13 +18,13 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="incubator-logo" alt="Lesson Description" src="assets/images/incubator-logo.svg"><span class="badge text-bg-warning">
-          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
+        <img id="incubator-logo" alt="Lesson Description" src="assets/images/incubator-logo.svg"><span class="badge text-bg-info">
+          <abbr title="This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
-              Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-circle" style="border-radius: 5px"></i>
+              Beta
             </a>
-            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
+            <span class="visually-hidden">This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team.</span>
           </abbr>
         </span>
 
@@ -897,7 +897,7 @@ that the outcomes are independent)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><code>g &lt;- sampleInfo$group</code><br><code>pvals &lt;- rowttests(geneExpression, factor(g))$p.value</code><br><code>sum(pvals &lt; 0.05)</code></p>
 </div>
@@ -923,7 +923,7 @@ the probability that a family with 10 children has 6 girls and 4 boys
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><code>p &lt;- 0.49</code><br><code>dbinom(6,10,p=p)</code></p>
 </div>
@@ -950,7 +950,7 @@ strictly above 0.5 in this interval?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>p &lt;- 0.4</code><br><code>pbinom(20,20,p) - pbinom(10,20,p)</code></p>
 </div>
@@ -976,7 +976,7 @@ one person wins?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>p &lt;- 1/175233510</code><br><code>N &lt;- 20000000</code><br><code>1 - ppois(1,N*p)</code><br><code>1 - pbinom(1,N,p)</code><br>
 Since the poisson distribution is a type of binomial distribution, both
@@ -1011,7 +1011,7 @@ interval?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p><code>p &lt;- 0.4</code><br><code>pbinom(0.45*20, 20, p) - pbinom(0.35*20,20,p)</code></p>
 </div>
@@ -1036,7 +1036,7 @@ probability?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p><code>p &lt;- 0.4</code><br><code>N &lt;- 20</code><br><code>a &lt;- (0.45*20 - N*p) / sqrt(N*p*(1-p))</code><br><code>b &lt;- (0.35*20 - N*p) / sqrt(N*p*(1-p))</code></p>
 <p><code>approx &lt;- pnorm(a) - pnorm(b)</code><br><code>approx</code></p>
@@ -1064,7 +1064,7 @@ or equal to 0.45?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p><code>N &lt;- 1000</code><br><code>p &lt;- 0.4</code><br><code>a &lt;- (0.45*N - N*p) / sqrt(N*p*(1-p))</code><br><code>b &lt;- (0.35*N - N*p) / sqrt(N*p*(1-p))</code><br><code>approx &lt;- pnorm(a) - pnorm(b)</code></p>
 <p><code>exact &lt;- pbinom(0.45*N,N,p) - pbinom(0.35*N,N,p)</code><br><code>exact - approx</code></p>
@@ -1105,7 +1105,7 @@ for N=100</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p><code>Ns &lt;- c(5,10,50,100,500)</code><br><code>Ps &lt;- seq(0,1,0.25)</code><br><code>mypar(5,5)</code><br><code>for (i in seq_along(Ns)) {</code><br><code>n &lt;- Ns[[i]]</code><br><code>k &lt;- seq(1:n-1)</code><br><code>for (j in seq_along(Ps)) {</code><br><code>p &lt;- Ps[[j]]</code><br><code>exact = dbinom(k, n, p)</code><br><code>a = (k+0.5- n*p)/sqrt(n*p*(1-p))</code><br><code>b = (k-0.5- n*p)/sqrt(n*p*(1-p))</code><br><code>approx = pnorm(a) - pnorm(b)</code><br><code>qqplot(exact,approx,xlab='exact',ylab='approx',</code><br><code>main = paste0('N=',n,' ','p=',p))</code><br><code>abline(0,1)</code><br><code>}</code><br><code>}</code><br>
 The answer is C: When N is 100 all approximations are spot on. When p is
@@ -1152,7 +1152,7 @@ What is the Poisson approximation for more than one person winning?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
 <div class="accordion-body">
 <p><code>1 - ppois(1,N*p)</code></p>
 </div>
@@ -1204,7 +1204,7 @@ maximizes the log-likelihood?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10"> Show me the solution </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
 <p><code>loglike = function(lambdas) {</code><br><code>logprobs &lt;- dpois(counts,lambdas,log=T)</code><br><code>loglikelihood &lt;- sum(logprobs)</code><br><code>return(loglikelihood)</code><br><code>}</code><br><code>lambdas &lt;- seq(0,15,len=300)</code><br><code>log_res &lt;- exp(sapply(lambdas,loglike))</code><br><code>optim_lambda &lt;- lambdas[which(log_res == max(log_res))]</code></p>
 </div>
@@ -1232,7 +1232,7 @@ expected. We can create a plot and see the counts per location:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution11" aria-expanded="false" aria-controls="collapseSolution11">
   <h4 class="accordion-header" id="headingSolution11"> Show me the solution </h4>
 </button>
-<div id="collapseSolution11" class="accordion-collapse collapse" data-bs-parent="#accordionSolution11" aria-labelledby="headingSolution11">
+<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
 <div class="accordion-body">
 <p><code>binLocation[which(counts == max(counts))]</code></p>
 </div>
@@ -1256,7 +1256,7 @@ expected. We can create a plot and see the counts per location:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution12" aria-expanded="false" aria-controls="collapseSolution12">
   <h4 class="accordion-header" id="headingSolution12"> Show me the solution </h4>
 </button>
-<div id="collapseSolution12" class="accordion-collapse collapse" data-bs-parent="#accordionSolution12" aria-labelledby="headingSolution12">
+<div id="collapseSolution12" class="accordion-collapse collapse" aria-labelledby="headingSolution12" data-bs-parent="#accordionSolution12">
 <div class="accordion-body">
 <p><code>max(counts)</code></p>
 </div>
@@ -1284,7 +1284,7 @@ is a Poisson random variable with rate:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution13" aria-expanded="false" aria-controls="collapseSolution13">
   <h4 class="accordion-header" id="headingSolution13"> Show me the solution </h4>
 </button>
-<div id="collapseSolution13" class="accordion-collapse collapse" data-bs-parent="#accordionSolution13" aria-labelledby="headingSolution13">
+<div id="collapseSolution13" class="accordion-collapse collapse" aria-labelledby="headingSolution13" data-bs-parent="#accordionSolution13">
 <div class="accordion-body">
 <p><code>1 - ppois(13, lambda)</code></p>
 </div>
@@ -1316,7 +1316,7 @@ its variability.<br></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution14" aria-expanded="false" aria-controls="collapseSolution14">
   <h4 class="accordion-header" id="headingSolution14"> Show me the solution </h4>
 </button>
-<div id="collapseSolution14" class="accordion-collapse collapse" data-bs-parent="#accordionSolution14" aria-labelledby="headingSolution14">
+<div id="collapseSolution14" class="accordion-collapse collapse" aria-labelledby="headingSolution14" data-bs-parent="#accordionSolution14">
 <div class="accordion-body">
 <p>The answer is B: We selected the highest region out of 57 and need to
 adjust for multiple testing. Answer A is wrong because we do use normal
@@ -1350,7 +1350,7 @@ guarantees a FWER of 0.05. What is this p-value cutoff?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution15" aria-expanded="false" aria-controls="collapseSolution15">
   <h4 class="accordion-header" id="headingSolution15"> Show me the solution </h4>
 </button>
-<div id="collapseSolution15" class="accordion-collapse collapse" data-bs-parent="#accordionSolution15" aria-labelledby="headingSolution15">
+<div id="collapseSolution15" class="accordion-collapse collapse" aria-labelledby="headingSolution15" data-bs-parent="#accordionSolution15">
 <div class="accordion-body">
 <p><code>0.05/length(counts)</code></p>
 </div>
@@ -1381,7 +1381,7 @@ D) A normal distribution provides a better approximation.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution16" aria-expanded="false" aria-controls="collapseSolution16">
   <h4 class="accordion-header" id="headingSolution16"> Show me the solution </h4>
 </button>
-<div id="collapseSolution16" class="accordion-collapse collapse" data-bs-parent="#accordionSolution16" aria-labelledby="headingSolution16">
+<div id="collapseSolution16" class="accordion-collapse collapse" aria-labelledby="headingSolution16" data-bs-parent="#accordionSolution16">
 <div class="accordion-body">
 <p>The answer is B. You can check whether the palindrome counts are well
 approximated by the normal distribution.<br><code>qqnorm(sort(counts))</code></p>
@@ -1419,7 +1419,7 @@ D) The normal distribution fits the data almost perfectly.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution17" aria-expanded="false" aria-controls="collapseSolution17">
   <h4 class="accordion-header" id="headingSolution17"> Show me the solution </h4>
 </button>
-<div id="collapseSolution17" class="accordion-collapse collapse" data-bs-parent="#accordionSolution17" aria-labelledby="headingSolution17">
+<div id="collapseSolution17" class="accordion-collapse collapse" aria-labelledby="headingSolution17" data-bs-parent="#accordionSolution17">
 <div class="accordion-body">
 <p><code>vars &lt;- rowVars(y[,1:3])</code><br><code>length(vars)</code><br><code>mypar(1,2)</code><br><code>qqnorm(sqrt(vars))</code> # choice B is false<br><code>qqnorm(vars)</code> # choice A and D are false<br>
 The answer is C.</p>
@@ -1445,7 +1445,7 @@ fitFDist function in the limma package:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution18" aria-expanded="false" aria-controls="collapseSolution18">
   <h4 class="accordion-header" id="headingSolution18"> Show me the solution </h4>
 </button>
-<div id="collapseSolution18" class="accordion-collapse collapse" data-bs-parent="#accordionSolution18" aria-labelledby="headingSolution18">
+<div id="collapseSolution18" class="accordion-collapse collapse" aria-labelledby="headingSolution18" data-bs-parent="#accordionSolution18">
 <div class="accordion-body">
 <p><code>library(limma)</code><br><code>res &lt;- fitFDist(vars,14)</code><br><code>res</code></p>
 </div>
@@ -1476,7 +1476,7 @@ provides a good fit.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution19" aria-expanded="false" aria-controls="collapseSolution19">
   <h4 class="accordion-header" id="headingSolution19"> Show me the solution </h4>
 </button>
-<div id="collapseSolution19" class="accordion-collapse collapse" data-bs-parent="#accordionSolution19" aria-labelledby="headingSolution19">
+<div id="collapseSolution19" class="accordion-collapse collapse" aria-labelledby="headingSolution19" data-bs-parent="#accordionSolution19">
 <div class="accordion-body">
 <p><code>pf &lt;- (seq(along=vars)-0.5)/length(vars)</code><br><code>theory &lt;- qf(pf,14,res$df2) # theoretical quantiles from F distribution</code><br><code>mypar(1,2)</code><br><code>qqplot(theory, sort(vars), xlab = 'theory', ylab ='obs') # F approximation</code>
 <code>vs variance from the data</code>
