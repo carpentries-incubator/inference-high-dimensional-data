@@ -623,7 +623,7 @@ namely chromosome location and the gene “name” used by biologists.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span><span class="op">)</span> <span class="co"># check date format</span></span>
 <span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-27"</span>,<span class="op">]</span></span>
@@ -650,7 +650,7 @@ in this particular technology are on chromosome Y?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span><span class="op">)</span> <span class="co"># check chromosome spelling</span></span>
 <span><span class="fu">sum</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span> <span class="op">==</span> <span class="st">"chrY"</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># remove missing values # (NAs) to sum TRUEs</span></span></code></pre>
@@ -676,7 +676,7 @@ for gene ARPC1A on the one subject that we measured on 2005-06-10?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code><span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>,<span class="op">]</span> <span class="co"># June 10 sample</span></span>
 <span><span class="va">sampleFileName</span> <span class="op">&lt;-</span> <span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>, <span class="st">"filename"</span><span class="op">]</span> <span class="co"># save file name</span></span>
@@ -706,7 +706,7 @@ document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -1014,7 +1014,7 @@ responses with the group through the collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -1102,7 +1102,7 @@ below 0.05?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><code>sum(pvals &lt; 0.05)/length(pvals)</code><br>
 50 of the p-values are less than 0.05 of a total<br>
@@ -1129,7 +1129,7 @@ below 0.01?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><code>sum(pvals &lt; 0.01)/length(pvals)</code><br>
 11 of the p-values are less than 0.01 of a total<br>
@@ -1166,7 +1166,7 @@ how many of p-values are below 0.05?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p><code>set.seed(100)</code><br><code>n &lt;- 20</code><br><code>null &lt;- vector("numeric", n)</code><br><code>for (i in 1:n) {</code><br><code>cases = rnorm(10, 30, 2)</code><br><code>controls = rnorm(10, 30, 2)</code><br><code>null[i] &lt;- t.test(cases, controls)$p.val</code><br><code>}</code><br><code>sum(null &lt; 0.05)</code></p>
 </div>
@@ -1198,7 +1198,7 @@ the null is true.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p><code>set.seed(100)</code><br><code>res &lt;- replicate(1000, {</code><br><code>randomData &lt;- matrix(rnorm(20*20,30,2),20,20)</code><br><code>pvals &lt;- rowttests(randomData, factor(g))$p.value</code><br><code>return(sum(pvals&lt;0.05))</code> # total number of false
 positives per replication<br><code>})</code><br><code>mean(res)</code></p>
@@ -1226,7 +1226,7 @@ than 0 false positives?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p><code>mean(res 0)</code></p>
 </div>
@@ -1346,7 +1346,7 @@ collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -1392,7 +1392,7 @@ D) P is not a random value.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 
 </div>
@@ -1422,7 +1422,7 @@ of incorrectly rejecting at least one of the null hypothesis?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><code>1 - 0.95^8793</code></p>
 </div>
@@ -1450,7 +1450,7 @@ mistake to be 5%.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p><code>m &lt;- 8793</code><br><code>1 - 0.95^(1/m)</code></p>
 </div>
@@ -2247,7 +2247,7 @@ collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -3126,7 +3126,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-basic-exploratory-data-analysis"><p>Content from <a href="basic-exploratory-data-analysis.html">Basic EDA for high-throughput data</a></p>
 <hr>
-<p>Last updated on 2025-08-11 |
+<p>Last updated on 2025-08-12 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/basic-exploratory-data-analysis.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 75 minutes</p>
@@ -3267,8 +3267,8 @@ samples.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">Biobase</span><span class="op">)</span></span>
 <span><span class="fu">load</span><span class="op">(</span><span class="st">"data/GSE5859.rda"</span><span class="op">)</span></span>
-<span><span class="va">ge</span> <span class="op">&lt;-</span> <span class="fu">exprs</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="co">##ge for gene expression</span></span>
-<span><span class="va">ge</span><span class="op">[</span>,<span class="fl">49</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">ge</span><span class="op">[</span>,<span class="fl">49</span><span class="op">]</span><span class="op">/</span><span class="fu">log2</span><span class="op">(</span><span class="fu">exp</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="co">##imitate error</span></span></code></pre>
+<span><span class="va">ge</span> <span class="op">&lt;-</span> <span class="fu">exprs</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="co">## ge for gene expression</span></span>
+<span><span class="va">ge</span><span class="op">[</span>,<span class="fl">49</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">ge</span><span class="op">[</span>,<span class="fl">49</span><span class="op">]</span><span class="op">/</span><span class="fu">log2</span><span class="op">(</span><span class="fu">exp</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="co">## imitate error</span></span></code></pre>
 </div>
 <p>A quick look at a summary of the distribution using boxplots
 immediately highlights the mistake:</p>
@@ -3350,13 +3350,8 @@ scaling plots.</p>
 </section><section><h2 class="section-heading" id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h2>
 <hr class="half-width">
-<p>We will be using a handful of Bioconductor packages. These are
-installed using the function biocLite which you can source from the web:
-source(“<a href="http://www.bioconductor.org/biocLite.R" class="external-link uri">http://www.bioconductor.org/biocLite.R</a>”) or you can run
-the bioc_install in the rafalib package.<br><code>library(rafalib)</code><br><code>bioc_install()</code></p>
-<p>Download and install the Bioconductor package SpikeInSubset and then
-load the library and the mas133 data:<br><code>library(rafalib)</code>
-<code>install_bioc("SpikeInSubset")</code></p>
+<p>Load the <code>SpikeInSubset</code> library and the
+<code>mas133</code> data:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3403,7 +3398,7 @@ correlation:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><code>length(which(e[,1] &lt;= 3000 &amp; e[,2]&lt;= 3000)) / dim(e)[1]</code><br><code>sum(e[,1] &lt;= 3000 &amp; e[,2] &lt;= 3000) / dim(e)[1]</code></p>
 </div>
@@ -3433,7 +3428,7 @@ D) We always take logs.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The answer choice is A: The tails do not dominate the plot, 95% of
 data are not in a tiny section of the plot.</p>
@@ -3466,7 +3461,7 @@ comparison?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><code>e &lt;- log2(exprs(mas133))</code><br><code>plot((e[,1]+e[,2])/2,e[,2]-e[,1],cex=0.5)</code><br><code>sd(e[,2]-e[,1])</code></p>
 </div>
@@ -3490,7 +3485,7 @@ comparison?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p><code>sum(abs(e[,2]-e[,1])1)</code></p>
 </div>
