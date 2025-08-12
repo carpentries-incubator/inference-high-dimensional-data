@@ -127,8 +127,8 @@ samples.
 ``` r
 library(Biobase)
 load("data/GSE5859.rda")
-ge <- exprs(e) ##ge for gene expression
-ge[,49] <- ge[,49]/log2(exp(1)) ##imitate error
+ge <- exprs(e) ## ge for gene expression
+ge[,49] <- ge[,49]/log2(exp(1)) ## imitate error
 ```
 
 A quick look at a summary of the distribution using boxplots immediately 
@@ -213,17 +213,8 @@ We will later introduce dendograms, heatmaps, and multi-dimensional scaling
 plots.
 
 ## Exercises
-We will be using a handful of Bioconductor packages. These are installed using 
-the function biocLite which you can source from the web:
-source("http://www.bioconductor.org/biocLite.R") or you can run the bioc_install 
-in the rafalib package.  
-`library(rafalib)`  
-`bioc_install()`  
 
-Download and install the Bioconductor package SpikeInSubset and then load the 
-library and the mas133 data:  
-`library(rafalib)` 
-`install_bioc("SpikeInSubset")`  
+Load the `SpikeInSubset` library and the `mas133` data:  
 
 
 ``` r
@@ -239,7 +230,8 @@ data(mas133)
 ```
 
 Now make the following plot of the first two samples and compute the 
-correlation:  
+correlation: 
+
 
 ``` r
 e <- exprs(mas133)  
@@ -317,6 +309,8 @@ How many fold changes above 2 do we see?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- While it is tempting to jump straight in to inferential analyses, it’s very important to run EDA first. Visualizing high-throughput data with EDA enables researchers to detect biological and technical issues with data. Plots can show at a glance where errors lie, making inferential analyses more accurate, efficient, and replicable.
+- While it is tempting to jump straight in to inferential analyses, it’s very important to run EDA first. Visualizing high-throughput data with EDA enables researchers to detect biological and technical issues with data. Plots can show 
+at a glance where errors lie, making inferential analyses more accurate,
+efficient, and replicable.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
