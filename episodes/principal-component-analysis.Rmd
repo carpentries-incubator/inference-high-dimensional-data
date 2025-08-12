@@ -219,16 +219,15 @@ prostate specific antigen and a number of clinical measures in men who were
 about to receive a radical prostatectomy. The data have 97 rows and 9 columns.
 
 Columns include:
-* `lcavol` (log-transformed cancer volume),
-* `lweight` (log-transformed prostate weight),
-* `lbph` (log-transformed amount of benign prostate enlargement),
-* `svi` (seminal vesicle invasion),
-* `lcp` (log-transformed capsular penetration; amount of spread of cancer in
-   outer walls of prostate),
-* `gleason` (Gleason score; grade of cancer cells),
-* `pgg45` (percentage Gleason scores 4 or 5),
-* `lpsa` (log-tranformed prostate specific antigen; level of PSA in blood).
-* `age` (patient age in years).
+1. `lcavol` (log-transformed cancer volume),
+2. `lweight` (log-transformed prostate weight),
+3. `lbph` (log-transformed amount of benign prostate enlargement),
+4. `svi` (seminal vesicle invasion),
+5. `lcp` (log-transformed capsular penetration; amount of spread of cancer in outer walls of prostate),
+6. `gleason` (Gleason score; grade of cancer cells),
+7. `pgg45` (percentage Gleason scores 4 or 5),
+8. `lpsa` (log-tranformed prostate specific antigen; level of PSA in blood).
+9. `age` (patient age in years).
 
 Here we will calculate principal component scores for each of the rows in this
 dataset, using five principal components (one for each variable included in the
@@ -437,11 +436,8 @@ produce useful figures and analysis tools.
 ##  A gene expression dataset of cancer patients
 
 The dataset we will be analysing in this lesson includes two subsets of data: 
-* a matrix of gene expression data showing microarray results for different
-  probes used to examine gene expression profiles in 91 different breast
-  cancer patient samples.
-* metadata associated with the gene expression results detailing information
-  from patients from whom samples were taken.
+1. a matrix of gene expression data showing microarray results for different probes used to examine gene expression profiles in 91 different breast cancer patient samples.
+2. metadata associated with the gene expression results detailing information from patients from whom samples were taken.
 
 Let's load the **`PCAtools`** package and the data.
 
