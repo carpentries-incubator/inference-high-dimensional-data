@@ -194,11 +194,12 @@ read in the locations of the palindrome and then count the number of palindromes
 in each 4,000 basepair segments.
 
 ```{r, palindrome_count_histogram, fig.cap="Palindrome count histogram.", warning=FALSE}
-x=read.csv("./data/hcmv.rda")[,2]
+# read in the locations data
+load("./data/hcmv.rda")
 
-breaks=seq(0,4000*round(max(x)/4000),4000)
-tmp=cut(x,breaks)
-counts=table(tmp)
+breaks <- seq(0, 4000 * round(max(locations)/4000), 4000)
+tmp <- cut(locations, breaks)
+counts <- table(tmp)
 
 library(rafalib)
 mypar(1,1)
@@ -228,14 +229,14 @@ that computes the log-likelihood for any $\lambda$ and use the function
 plot of the log-likelihood along with vertical line showing the MLE.
 
 ```{r mle, fig.cap="Likelihood versus lambda."}
-l<-function(lambda) sum(dpois(counts,lambda,log=TRUE)) 
+l <- function(lambda) sum(dpois(counts, lambda, log=TRUE)) 
 
-lambdas<-seq(3,7,len=100)
-ls <- exp(sapply(lambdas,l))
+lambdas <- seq(3, 7, len=100)
+ls <- exp(sapply(lambdas, l))
 
-plot(lambdas,ls,type="l")
+plot(lambdas, ls, type="l")
 
-mle=optimize(l,c(0,10),maximum=TRUE)
+mle=optimize(l, c(0,10), maximum=TRUE)
 abline(v=mle$maximum)
 ```
 
@@ -250,9 +251,9 @@ Note that a plot of observed counts versus counts predicted by the Poisson shows
 that the fit is quite good in this case:
 
 ```{r obs_versus_theoretical_Poisson_count, fig.cap="Observed counts versus theoretical Poisson counts."}
-theoretical<-qpois((seq(0,99)+0.5)/100,mean(counts))
+theoretical <- qpois((seq(0, 99) + 0.5)/100, mean(counts))
 
-qqplot(theoretical,counts)
+qqplot(theoretical, counts)
 abline(0,1)
 ```
 
