@@ -126,6 +126,9 @@ is uncorrelated with the first principal component. There are as many principal
 components as there are variables in your dataset, but as we'll see, some are
 more useful at explaining your data than others. By definition, the first
 principal component explains more variation than other principal components.
+Some of the following content is adapted from 
+[O’Callaghan A, Robertson G, LLewellyn M, Becher H, Meynert A, Vallejos C, Ewing A. (2024)](https://carpentries-incubator.github.io/high-dimensional-stats-r/index.html). 
+_High dimensional statistics with R_. https://github.com/carpentries-incubator/high-dimensional-stats-r.
 
 The animation below illustrates how principal components are calculated from
 data. You can imagine that the black line is a rod and each red dashed line is
@@ -203,27 +206,26 @@ points(z[1,1:2],z[2,1:2],col=2,pch=16)
 <p class="caption">Twin height scatterplot (left) and MA-plot (right).</p>
 </div>
 
- How do we perform a PCA?
+How do we perform a PCA?
 
 ## A prostate cancer dataset
 
-The `Prostate` dataset is freely available online and represents data from 97
-men who have prostate cancer. The data come from a study which examined the
-correlation between the level of prostate specific antigen and a number of
-clinical measures in men who were about to receive a radical prostatectomy.
-The data have 97 rows and 9 columns.
+The `Prostate` dataset represents data from 97 men who have prostate cancer. The
+data come from a study which examined the correlation between the level of 
+prostate specific antigen and a number of clinical measures in men who were 
+about to receive a radical prostatectomy. The data have 97 rows and 9 columns.
 
 Columns include:
-- `lcavol` (log-transformed cancer volume),
-- `lweight` (log-transformed prostate weight),
-- `lbph` (log-transformed amount of benign prostate enlargement),
-- `svi` (seminal vesicle invasion),
-- `lcp` (log-transformed capsular penetration; amount of spread of cancer in
+* `lcavol` (log-transformed cancer volume),
+* `lweight` (log-transformed prostate weight),
+* `lbph` (log-transformed amount of benign prostate enlargement),
+* `svi` (seminal vesicle invasion),
+* `lcp` (log-transformed capsular penetration; amount of spread of cancer in
    outer walls of prostate),
-- `gleason` (Gleason score; grade of cancer cells),
-- `pgg45` (percentage Gleason scores 4 or 5),
-- `lpsa` (log-tranformed prostate specific antigen; level of PSA in blood).
-- `age` (patient age in years).
+* `gleason` (Gleason score; grade of cancer cells),
+* `pgg45` (percentage Gleason scores 4 or 5),
+* `lpsa` (log-tranformed prostate specific antigen; level of PSA in blood).
+* `age` (patient age in years).
 
 Here we will calculate principal component scores for each of the rows in this
 dataset, using five principal components (one for each variable included in the
@@ -232,7 +234,7 @@ variables in the prostate dataset, so that we can create fewer variables
 representing clinical markers of cancer progression. Standard PCAs are carried
 out using continuous variables only.
 
-First, we will examine the `Prostate` dataset.
+First, we will examine the `Prostate` dataset in the `Brq` package.
 
 
 ``` r
