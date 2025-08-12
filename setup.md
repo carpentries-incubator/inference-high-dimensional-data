@@ -41,6 +41,9 @@ download.file(url = "https://github.com/genomicsclass/maPooling/raw/refs/heads/m
 download.file(url = "https://github.com/genomicsclass/tissuesGeneExpression/raw/refs/heads/master/data/tissuesGeneExpression.rda",
               destfile = "data/tissuesGeneExpression.rda",
               mode = "wb")
+download.file(url = "https://github.com/genomicsclass/dagdata/raw/refs/heads/master/data/hcmv.rda", 
+              destfile = "data/hcmv.rda",
+              mode = "wb")
 ~~~
 
 ## Software Setup
@@ -62,7 +65,7 @@ support from the IT help desk.
 from the Console or from the Install button on the RStudio Packages tab. 
 Copy-paste this list of packages into the Install dialog box: 
 
-    `devtools, BiocManager, here, rafalib, lasso2, matrixStats`
+    `BiocManager, here, rafalib, lasso2, matrixStats, Brq`
 
     Alternatively, run the following in the Console.
 
@@ -80,6 +83,7 @@ code in the Console for each package.
     library(here)
     library(rafalib)
     library(matrixStats)
+    library(Brq)
     ~~~
     
 

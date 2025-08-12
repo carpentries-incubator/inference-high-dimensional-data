@@ -106,8 +106,8 @@ prop.table(tab)
 
 ``` output
 winners
-    0     1     2     3     4 
-0.618 0.291 0.077 0.012 0.002 
+    0     1     2     3 
+0.605 0.294 0.088 0.013 
 ```
 
 For cases like this, where $N$ is very large, but $p$ is small enough to make 
@@ -228,17 +228,12 @@ in each 4,000 basepair segments.
 
 
 ``` r
-x=read.csv("./data/hcmv.rda")[,2]
-```
+# read in the locations data
+load("./data/hcmv.rda")
 
-``` error
-Error in `[.data.frame`(read.csv("./data/hcmv.rda"), , 2): undefined columns selected
-```
-
-``` r
-breaks=seq(0,4000*round(max(x)/4000),4000)
-tmp=cut(x,breaks)
-counts=table(tmp)
+breaks <- seq(0, 4000 * round(max(locations)/4000), 4000)
+tmp <- cut(locations, breaks)
+counts <- table(tmp)
 
 library(rafalib)
 mypar(1,1)
@@ -274,14 +269,14 @@ plot of the log-likelihood along with vertical line showing the MLE.
 
 
 ``` r
-l<-function(lambda) sum(dpois(counts,lambda,log=TRUE)) 
+l <- function(lambda) sum(dpois(counts, lambda, log=TRUE)) 
 
-lambdas<-seq(3,7,len=100)
-ls <- exp(sapply(lambdas,l))
+lambdas <- seq(3, 7, len=100)
+ls <- exp(sapply(lambdas, l))
 
-plot(lambdas,ls,type="l")
+plot(lambdas, ls, type="l")
 
-mle=optimize(l,c(0,10),maximum=TRUE)
+mle=optimize(l, c(0,10), maximum=TRUE)
 abline(v=mle$maximum)
 ```
 
@@ -299,7 +294,7 @@ print( c(mle$maximum, mean(counts) ) )
 ```
 
 ``` output
-[1]    9.999944 1279.750000
+[1] 5.157894 5.157895
 ```
 
 Note that a plot of observed counts versus counts predicted by the Poisson shows 
@@ -307,9 +302,9 @@ that the fit is quite good in this case:
 
 
 ``` r
-theoretical<-qpois((seq(0,99)+0.5)/100,mean(counts))
+theoretical <- qpois((seq(0, 99) + 0.5)/100, mean(counts))
 
-qqplot(theoretical,counts)
+qqplot(theoretical, counts)
 abline(0,1)
 ```
 
