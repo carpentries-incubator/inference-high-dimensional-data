@@ -551,6 +551,9 @@ R console to download the data.</p></li>
 <span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></span>
 <span><span class="fu">download.file</span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://github.com/genomicsclass/tissuesGeneExpression/raw/refs/heads/master/data/tissuesGeneExpression.rda"</span>,</span>
 <span>              destfile <span class="op">=</span> <span class="st">"data/tissuesGeneExpression.rda"</span>,</span>
+<span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></span>
+<span><span class="fu">download.file</span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://github.com/genomicsclass/dagdata/raw/refs/heads/master/data/hcmv.rda"</span>,</span>
+<span>              destfile <span class="op">=</span> <span class="st">"data/hcmv.rda"</span>,</span>
 <span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></span></code></pre>
 </section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
 <hr class="half-width"><p>R is a programming language that is especially powerful for data
@@ -568,7 +571,7 @@ instead without needing support from the IT help desk.</p></li>
 install them from the Console or from the Install button on the RStudio
 Packages tab. Copy-paste this list of packages into the Install dialog
 box:</p>
-<p><code>devtools, BiocManager, here, rafalib, lasso2, matrixStats</code></p>
+<p><code>BiocManager, here, rafalib, lasso2, matrixStats, Brq</code></p>
 <p>Alternatively, run the following in the Console.</p>
 <pre><code><span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"BiocManager"</span>, <span class="st">"here"</span>,</span>
 <span>                   <span class="st">"rafalib"</span>, <span class="st">"matrixStats"</span>, <span class="st">"Brq"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
@@ -580,7 +583,8 @@ alternatively running this code in the Console for each package.</p>
 <pre><code><span><span class="kw">library</span><span class="op">(</span><span class="va">BiocManager</span><span class="op">)</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">here</span><span class="op">)</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">rafalib</span><span class="op">)</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">matrixStats</span><span class="op">)</span></span></code></pre>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">matrixStats</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">Brq</span><span class="op">)</span></span></code></pre>
 </li>
 <li>
 <p>Install these Bioconductor packages by running the code in the
