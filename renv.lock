@@ -447,7 +447,7 @@
       "Title": "Bayesian Analysis of Quantile Regression Models",
       "Date": "2020-05-30",
       "Author": "Rahim Alhamzawi",
-      "Maintainer": "Rahim Alhamzawi (University of Al-Qadisiyah) <rahim.alhamzawi@qu.edu.iq>",
+      "Maintainer": "Rahim Alhamzawi  (University of Al-Qadisiyah) <rahim.alhamzawi@qu.edu.iq>",
       "Description": "Bayesian estimation and variable selection for quantile regression models.",
       "License": "GPL (>= 3)",
       "NeedsCompilation": "no",
@@ -1744,8 +1744,7 @@
       "License": "GPL-2 | GPL-3",
       "URL": "http://www.rforge.net/base64enc",
       "NeedsCompilation": "yes",
-      "Repository": "RSPM",
-      "Encoding": "UTF-8"
+      "Repository": "CRAN"
     },
     "beachmat": {
       "Package": "beachmat",
@@ -4636,8 +4635,7 @@
       "URL": "https://github.com/vubiostat/r-yaml/",
       "BugReports": "https://github.com/vubiostat/r-yaml/issues",
       "NeedsCompilation": "yes",
-      "Repository": "RSPM",
-      "Encoding": "UTF-8"
+      "Repository": "CRAN"
     }
   }
 }
