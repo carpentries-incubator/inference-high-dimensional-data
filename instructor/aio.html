@@ -623,7 +623,7 @@ namely chromosome location and the gene “name” used by biologists.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span><span class="op">)</span> <span class="co"># check date format</span></span>
 <span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-27"</span>,<span class="op">]</span></span>
@@ -650,7 +650,7 @@ in this particular technology are on chromosome Y?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span><span class="op">)</span> <span class="co"># check chromosome spelling</span></span>
 <span><span class="fu">sum</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span> <span class="op">==</span> <span class="st">"chrY"</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># remove missing values # (NAs) to sum TRUEs</span></span></code></pre>
@@ -676,7 +676,7 @@ for gene ARPC1A on the one subject that we measured on 2005-06-10?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code><span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>,<span class="op">]</span> <span class="co"># June 10 sample</span></span>
 <span><span class="va">sampleFileName</span> <span class="op">&lt;-</span> <span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>, <span class="st">"filename"</span><span class="op">]</span> <span class="co"># save file name</span></span>
@@ -706,7 +706,7 @@ document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -1346,7 +1346,7 @@ collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -1392,7 +1392,7 @@ D) P is not a random value.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -1422,7 +1422,7 @@ of incorrectly rejecting at least one of the null hypothesis?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>1 - 0.95^8793</code></p>
 </div>
@@ -1450,7 +1450,7 @@ mistake to be 5%.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>m &lt;- 8793</code><br><code>1 - 0.95^(1/m)</code></p>
 </div>
@@ -1778,7 +1778,7 @@ collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -2022,7 +2022,7 @@ various values of m 1.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><code>plot(alphas/m, (1-(1-alphas)^(1/m)), xlab = 'bonf', ylab = 'sidak',</code>
 <code>main = 'p-val cutoff')</code><br><code>abline(0,1)</code></p>
@@ -2051,7 +2051,7 @@ D) Sidak’s.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Bonferroni’s procedure is more conservative (choice B). Conservative
 refers to strictness. The p-value cutoff for significance is lower in
@@ -2082,7 +2082,7 @@ Set the seed at 1 and run 10,000 simulation.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>set.seed(1)</code><br><code>bonf_res &lt;- replicate(10000, {</code><br><code>pvals &lt;- runif(8793,0,1)</code><br><code>bonfcall &lt;- sum((pvals * m) &lt; 0.05)</code><br><code>return(bonfcall)</code><br><code>})</code><br><code>sum(bonf_res&gt;0)/length(bonf_res)</code></p>
 </div>
@@ -2106,7 +2106,7 @@ Set the seed at 1 and run 10,000 simulation.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>set.seed(1)</code><br><code>sidak_res &lt;- replicate(10000, {</code><br><code>pvals &lt;- runif(8793,0,1)</code><br><code>sidakcall &lt;- sum((1-(1-pvals)^m) &lt; 0.05)</code><br><code>return(sidakcall)</code><br><code>sum(sidak_res&gt;0)/length(sidak_res)</code><br><code>})</code></p>
 </div>
@@ -2247,7 +2247,7 @@ collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -2776,7 +2776,7 @@ the function <code>rowttests</code> from the genefilter package.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><code>g &lt;- sampleInfo$group</code><br><code>pvals &lt;- rowttests(geneExpression, factor(g))$p.value</code><br><code>sum(pvals &lt; 0.05)</code></p>
 </div>
@@ -2802,7 +2802,7 @@ procedure?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><code>m &lt;- 8793</code><br><code>sum(pvals &lt; (0.05/m))</code></p>
 </div>
@@ -2836,7 +2836,7 @@ gene expression dataset.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p><code>pvals_adjust &lt;- p.adjust(pvals, method = 'fdr')</code><br><code>sum(pvals_adjust &lt; 0.05)</code></p>
 </div>
@@ -2862,7 +2862,7 @@ genes have q-values below 0.05?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p><code>res &lt;- qvalue(pvals)</code><br><code>sum(res$qvalues &lt; 0.05)</code></p>
 </div>
@@ -2887,7 +2887,7 @@ genes for which the null hypothesis is true π0 = m0/m</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p><code>res$pi0</code></p>
 </div>
@@ -2920,7 +2920,7 @@ null hypothesis is true and provides a more conservative estimate.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p><code>plot(pvals_adjust, res$qvalues, xlab = 'fdr', ylab = 'qval')</code><br><code>abline(0,1)</code><br>
 The qvalue function estimates the proportion of genes for which the null
@@ -2963,7 +2963,7 @@ Bonferroni? What are the false negative rates for Bonferroni?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <pre><code><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fu">rep</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">12</span><span class="op">)</span>,<span class="fu">rep</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">8793</span></span>
@@ -3015,7 +3015,7 @@ What are the false negative rates for p.adjust?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <pre><code><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fu">rep</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">12</span><span class="op">)</span>,<span class="fu">rep</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">8793</span></span>
@@ -3068,7 +3068,7 @@ What are the false negative rates for qvalues?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <pre><code><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fu">rep</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">12</span><span class="op">)</span>,<span class="fu">rep</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">8793</span></span>
@@ -3640,7 +3640,7 @@ varies with disease severity.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>In the first case, a regression model would be more suitable; perhaps
 a survival model. In the second, again a regression model, likely linear
@@ -3871,7 +3871,7 @@ the PCA.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol start="2" style="list-style-type: decimal">
 <li>Scaling the data isn’t guaranteed to make the results more
@@ -4192,7 +4192,7 @@ columns of rotated data and loadings from your PCA.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code><span><span class="va">pc</span> <span class="op">&lt;-</span> <span class="fu">pca</span><span class="op">(</span><span class="va">mat</span>, metadata <span class="op">=</span> <span class="va">metadata</span><span class="op">)</span></span>
 <span><span class="co">#Many PCs explain a very small amount of the total variance in the data</span></span>
@@ -4280,7 +4280,7 @@ explained by each principal component.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <pre><code><span><span class="fu">screeplot</span><span class="op">(</span><span class="va">pc</span>, axisLabSize <span class="op">=</span> <span class="fl">5</span>, titleLabSize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></code></pre>
 <p>Note that first principal component (PC1) explains more variation
@@ -4337,7 +4337,7 @@ the data appear to form clusters. Explain your results.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <pre><code><span><span class="fu">biplot</span><span class="op">(</span><span class="va">pc</span>, lab <span class="op">=</span> <span class="cn">NULL</span>, colby <span class="op">=</span> <span class="st">'Grade'</span>, legendPosition <span class="op">=</span> <span class="st">'top'</span><span class="op">)</span></span></code></pre>
 <p>The biplot shows the position of patient samples relative to PC1 and
@@ -4407,7 +4407,7 @@ receptor gene (ER+ or ER-).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <pre><code><span>  <span class="fu">biplot</span><span class="op">(</span><span class="va">pc</span>,</span>
 <span>    lab <span class="op">=</span> <span class="fu">paste0</span><span class="op">(</span><span class="va">pc</span><span class="op">$</span><span class="va">metadata</span><span class="op">$</span><span class="va">Age</span>,<span class="st">'years'</span><span class="op">)</span>,</span>
@@ -5710,8 +5710,8 @@ any links that you are not going to use.
   "url": "https://smcclatchy.github.io/inference-high-dimensional-data/instructor/aio.html",
   "identifier": "https://smcclatchy.github.io/inference-high-dimensional-data/instructor/aio.html",
   "dateCreated": "2025-07-14",
-  "dateModified": "2025-09-30",
-  "datePublished": "2025-09-30"
+  "dateModified": "2025-10-07",
+  "datePublished": "2025-10-07"
 }
 
   </script><script>

@@ -561,7 +561,7 @@ namely chromosome location and the gene “name” used by biologists.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span><span class="op">)</span> <span class="co"># check date format</span></span>
 <span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-27"</span>,<span class="op">]</span></span>
@@ -588,7 +588,7 @@ in this particular technology are on chromosome Y?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span><span class="op">)</span> <span class="co"># check chromosome spelling</span></span>
 <span><span class="fu">sum</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span> <span class="op">==</span> <span class="st">"chrY"</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># remove missing values # (NAs) to sum TRUEs</span></span></code></pre>
@@ -614,7 +614,7 @@ for gene ARPC1A on the one subject that we measured on 2005-06-10?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code><span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>,<span class="op">]</span> <span class="co"># June 10 sample</span></span>
 <span><span class="va">sampleFileName</span> <span class="op">&lt;-</span> <span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>, <span class="st">"filename"</span><span class="op">]</span> <span class="co"># save file name</span></span>
@@ -644,7 +644,7 @@ document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -731,7 +731,7 @@ any links that you are not going to use.
   "identifier": "https://smcclatchy.github.io/inference-high-dimensional-data/instructor/example-gene-expression-data.html",
   "dateCreated": "2025-07-14",
   "dateModified": "2025-09-23",
-  "datePublished": "2025-09-30"
+  "datePublished": "2025-10-07"
 }
 
   </script><script>
