@@ -70,7 +70,7 @@ plot(results$dm,-log10(results$p.value),
      xlab="Effect size",ylab="- log (base 10) p-values")
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-volcano_plot-1.png"  />
+<img src="fig/basic-exploratory-data-analysis-rendered-volcano_plot-1.png" alt=""  />
 
 Many features with very small p-values, but small effect sizes as we see here, 
 are sometimes indicative of problematic data.
@@ -90,7 +90,7 @@ hist(nullpvals,ylim=c(0,1400))
 hist(pvals,ylim=c(0,1400))
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-pval-hist-1.png" style="display: block; margin: auto;" />
+<img src="fig/basic-exploratory-data-analysis-rendered-pval-hist-1.png" alt="" style="display: block; margin: auto;" />
 
 When we expect most hypotheses to be null and don't see a uniform p-value 
 distribution, it might be indicative of unexpected properties, such as 
@@ -106,7 +106,7 @@ permresults <- rowttests(geneExpression,permg)
 hist(permresults$p.value)
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-pval-hist2-1.png" style="display: block; margin: auto;" />
+<img src="fig/basic-exploratory-data-analysis-rendered-pval-hist2-1.png" alt="" style="display: block; margin: auto;" />
 
 In a later chapter we will see that the columns in this dataset are not 
 independent and thus the assumptions used to compute the p-values here are 
@@ -141,7 +141,7 @@ mypar(1,1)
 boxplot(ge,range=0,names=1:ncol(e),col=ifelse(1:ncol(ge)==49,1,2))
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-boxplots-1.png" style="display: block; margin: auto;" />
+<img src="fig/basic-exploratory-data-analysis-rendered-boxplots-1.png" alt="" style="display: block; margin: auto;" />
 
 Note that the number of samples is a bit too large here, making it hard to see 
 the boxes. One can instead simply show the boxplot summaries without the boxes:
@@ -152,7 +152,7 @@ qs <- t(apply(ge,2,quantile,prob=c(0.05,0.25,0.5,0.75,0.95)))
 matplot(qs,type="l",lty=1)
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-kaboxplot-1.png" style="display: block; margin: auto;" />
+<img src="fig/basic-exploratory-data-analysis-rendered-kaboxplot-1.png" alt="" style="display: block; margin: auto;" />
 
 We refer to this figure as a _kaboxplot_ because Karl Broman was the first we 
 saw use it as an alternative to boxplots.
@@ -170,7 +170,7 @@ mypar(1,1)
 shist(ge,unit=0.5)
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-shist-1.png" style="display: block; margin: auto;" />
+<img src="fig/basic-exploratory-data-analysis-rendered-shist-1.png" alt="" style="display: block; margin: auto;" />
 
 #### MA plot
 
@@ -192,7 +192,7 @@ plot(x, y)
 plot((x + y)/2, x - y)
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-maplot-1.png" style="display: block; margin: auto;" />
+<img src="fig/basic-exploratory-data-analysis-rendered-maplot-1.png" alt="" style="display: block; margin: auto;" />
 
 Note that once we rotate the plot, the fact that these data have differences of 
 about:
@@ -241,7 +241,7 @@ b <- 1000 #a buffer
 polygon(c(-b,k,k,-b),c(-b,-b,k,k),col="red",density=0,border="red")
 ```
 
-<img src="fig/basic-exploratory-data-analysis-rendered-corr_two_samples-1.png" style="display: block; margin: auto;" />
+<img src="fig/basic-exploratory-data-analysis-rendered-corr_two_samples-1.png" alt="" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
