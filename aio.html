@@ -417,7 +417,7 @@
         
 <section id="aio-example-gene-expression-data"><p>Content from <a href="example-gene-expression-data.html">Example Gene Expression Datasets</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/example-gene-expression-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -621,7 +621,7 @@ namely chromosome location and the gene “name” used by biologists.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span><span class="op">)</span> <span class="co"># check date format</span></span>
 <span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-27"</span>,<span class="op">]</span></span>
@@ -648,7 +648,7 @@ in this particular technology are on chromosome Y?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre><code><span><span class="fu">unique</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span><span class="op">)</span> <span class="co"># check chromosome spelling</span></span>
 <span><span class="fu">sum</span><span class="op">(</span><span class="va">geneAnnotation</span><span class="op">$</span><span class="va">CHR</span> <span class="op">==</span> <span class="st">"chrY"</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># remove missing values # (NAs) to sum TRUEs</span></span></code></pre>
@@ -674,7 +674,7 @@ for gene ARPC1A on the one subject that we measured on 2005-06-10?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code><span><span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>,<span class="op">]</span> <span class="co"># June 10 sample</span></span>
 <span><span class="va">sampleFileName</span> <span class="op">&lt;-</span> <span class="va">sampleInfo</span><span class="op">[</span><span class="va">sampleInfo</span><span class="op">$</span><span class="va">date</span> <span class="op">==</span> <span class="st">"2005-06-10"</span>, <span class="st">"filename"</span><span class="op">]</span> <span class="co"># save file name</span></span>
@@ -704,7 +704,7 @@ document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 
 </div>
@@ -732,7 +732,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-inference-for-highthroughput"><p>Content from <a href="inference-for-highthroughput.html">Basic inference for high-throughput data</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/inference-for-highthroughput.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -808,7 +808,7 @@ three times and watch how the average changes.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 24.03333</code></pre>
+<pre class="output" tabindex="0"><code>[1] 23.96333</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -820,7 +820,7 @@ three times and watch how the average changes.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 25.6125</code></pre>
+<pre class="output" tabindex="0"><code>[1] 23.91917</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -832,7 +832,7 @@ three times and watch how the average changes.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 24.575</code></pre>
+<pre class="output" tabindex="0"><code>[1] 25.41</code></pre>
 </div>
 <p>Notice that the mean is a random variable. To explore p-values as
 random variables, consider the example in which we define a p-value from
@@ -1251,7 +1251,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-procedures-for-multiple-testing"><p>Content from <a href="procedures-for-multiple-testing.html">Procedures for Multiple Comparisons</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/procedures-for-multiple-testing.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1342,7 +1342,7 @@ collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
@@ -1388,7 +1388,7 @@ D) P is not a random value.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -1418,7 +1418,7 @@ of incorrectly rejecting at least one of the null hypothesis?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>1 - 0.95^8793</code></p>
 </div>
@@ -1446,7 +1446,7 @@ mistake to be 5%.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>m &lt;- 8793</code><br><code>1 - 0.95^(1/m)</code></p>
 </div>
@@ -1478,7 +1478,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-error-rates"><p>Content from <a href="error-rates.html">Error Rates</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/error-rates.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1809,7 +1809,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-bonferroni-correction"><p>Content from <a href="bonferroni-correction.html">The Bonferroni Correction</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/bonferroni-correction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2129,7 +2129,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-false-discovery-rate"><p>Content from <a href="false-discovery-rate.html">False Discovery Rate</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/false-discovery-rate.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2240,7 +2240,7 @@ collaborative document.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -2560,7 +2560,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-direct-approach-false-discovery-rate"><p>Content from <a href="direct-approach-false-discovery-rate.html">Direct Approach to FDR and q-values</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/direct-approach-false-discovery-rate.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2768,7 +2768,7 @@ the function <code>rowttests</code> from the genefilter package.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><code>g &lt;- sampleInfo$group</code><br><code>pvals &lt;- rowttests(geneExpression, factor(g))$p.value</code><br><code>sum(pvals &lt; 0.05)</code></p>
 </div>
@@ -2794,7 +2794,7 @@ procedure?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><code>m &lt;- 8793</code><br><code>sum(pvals &lt; (0.05/m))</code></p>
 </div>
@@ -2828,7 +2828,7 @@ gene expression dataset.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>pvals_adjust &lt;- p.adjust(pvals, method = 'fdr')</code><br><code>sum(pvals_adjust &lt; 0.05)</code></p>
 </div>
@@ -2854,7 +2854,7 @@ genes have q-values below 0.05?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>res &lt;- qvalue(pvals)</code><br><code>sum(res$qvalues &lt; 0.05)</code></p>
 </div>
@@ -2879,7 +2879,7 @@ genes for which the null hypothesis is true π0 = m0/m</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p><code>res$pi0</code></p>
 </div>
@@ -2912,7 +2912,7 @@ null hypothesis is true and provides a more conservative estimate.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p><code>plot(pvals_adjust, res$qvalues, xlab = 'fdr', ylab = 'qval')</code><br><code>abline(0,1)</code><br>
 The qvalue function estimates the proportion of genes for which the null
@@ -2955,7 +2955,7 @@ Bonferroni? What are the false negative rates for Bonferroni?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <pre><code><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fu">rep</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">12</span><span class="op">)</span>,<span class="fu">rep</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">8793</span></span>
@@ -3007,7 +3007,7 @@ What are the false negative rates for p.adjust?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <pre><code><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fu">rep</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">12</span><span class="op">)</span>,<span class="fu">rep</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">8793</span></span>
@@ -3060,7 +3060,7 @@ What are the false negative rates for qvalues?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
 <div class="accordion-body">
 <pre><code><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fu">rep</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">12</span><span class="op">)</span>,<span class="fu">rep</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">8793</span></span>
@@ -3118,7 +3118,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-basic-exploratory-data-analysis"><p>Content from <a href="basic-exploratory-data-analysis.html">Basic EDA for high-throughput data</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/basic-exploratory-data-analysis.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3203,7 +3203,7 @@ results above:</p>
 <code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">results</span><span class="op">$</span><span class="va">dm</span>,<span class="op">-</span><span class="fu">log10</span><span class="op">(</span><span class="va">results</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span>,</span>
 <span>     xlab<span class="op">=</span><span class="st">"Effect size"</span>,ylab<span class="op">=</span><span class="st">"- log (base 10) p-values"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-volcano_plot-1.png" class="figure mx-auto d-block"></figure><p>Many features with very small p-values, but small effect sizes as we
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-volcano_plot-1.png" alt="" class="figure mx-auto d-block"></figure><p>Many features with very small p-values, but small effect sizes as we
 see here, are sometimes indicative of problematic data.</p>
 </div>
 <div class="section level4">
@@ -3222,7 +3222,7 @@ we see a higher frequency of smaller p-values.</p>
 <span><span class="fu">hist</span><span class="op">(</span><span class="va">nullpvals</span>,ylim<span class="op">=</span><span class="fu">c</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1400</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">hist</span><span class="op">(</span><span class="va">pvals</span>,ylim<span class="op">=</span><span class="fu">c</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1400</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-pval-hist-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>When we expect most hypotheses to be null and don’t see a uniform
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-pval-hist-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>When we expect most hypotheses to be null and don’t see a uniform
 p-value distribution, it might be indicative of unexpected properties,
 such as correlated samples.</p>
 <p>If we permute the outcomes and calculate p-values then, if the
@@ -3236,7 +3236,7 @@ these data we do not:</p>
 <span><span class="va">permresults</span> <span class="op">&lt;-</span> <span class="fu">rowttests</span><span class="op">(</span><span class="va">geneExpression</span>,<span class="va">permg</span><span class="op">)</span></span>
 <span><span class="fu">hist</span><span class="op">(</span><span class="va">permresults</span><span class="op">$</span><span class="va">p.value</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-pval-hist2-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>In a later chapter we will see that the columns in this dataset are
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-pval-hist2-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>In a later chapter we will see that the columns in this dataset are
 not independent and thus the assumptions used to compute the p-values
 here are incorrect.</p>
 </div>
@@ -3271,7 +3271,7 @@ immediately highlights the mistake:</p>
 <span><span class="fu">mypar</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span></span>
 <span><span class="fu">boxplot</span><span class="op">(</span><span class="va">ge</span>,range<span class="op">=</span><span class="fl">0</span>,names<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fu">ncol</span><span class="op">(</span><span class="va">e</span><span class="op">)</span>,col<span class="op">=</span><span class="fu">ifelse</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu">ncol</span><span class="op">(</span><span class="va">ge</span><span class="op">)</span><span class="op">==</span><span class="fl">49</span>,<span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-boxplots-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that the number of samples is a bit too large here, making it
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-boxplots-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that the number of samples is a bit too large here, making it
 hard to see the boxes. One can instead simply show the boxplot summaries
 without the boxes:</p>
 <div class="codewrapper sourceCode" id="cb8">
@@ -3281,7 +3281,7 @@ without the boxes:</p>
 <code class="sourceCode R"><span><span class="va">qs</span> <span class="op">&lt;-</span> <span class="fu">t</span><span class="op">(</span><span class="fu">apply</span><span class="op">(</span><span class="va">ge</span>,<span class="fl">2</span>,<span class="va">quantile</span>,prob<span class="op">=</span><span class="fu">c</span><span class="op">(</span><span class="fl">0.05</span>,<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>,<span class="fl">0.95</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">matplot</span><span class="op">(</span><span class="va">qs</span>,type<span class="op">=</span><span class="st">"l"</span>,lty<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-kaboxplot-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We refer to this figure as a <em>kaboxplot</em> because Karl Broman
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-kaboxplot-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We refer to this figure as a <em>kaboxplot</em> because Karl Broman
 was the first we saw use it as an alternative to boxplots.</p>
 <p>We can also plot all the histograms. Because we have so much data, we
 create histograms using small bins, then smooth the heights of the bars
@@ -3296,7 +3296,7 @@ points in region of size “unit” centered at <span class="math inline">\(x_0\
 <code class="sourceCode R"><span><span class="fu">mypar</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span></span>
 <span><span class="fu">shist</span><span class="op">(</span><span class="va">ge</span>,unit<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-shist-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-shist-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level4">
 <h4 id="ma-plot">MA plot<a class="anchor" aria-label="anchor" href="#ma-plot"></a>
@@ -3320,7 +3320,7 @@ intensities used with microarrays (MA) data.</p>
 <span><span class="fu">plot</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span>
 <span><span class="fu">plot</span><span class="op">(</span><span class="op">(</span><span class="va">x</span> <span class="op">+</span> <span class="va">y</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">x</span> <span class="op">-</span> <span class="va">y</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-maplot-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that once we rotate the plot, the fact that these data have
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-maplot-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Note that once we rotate the plot, the fact that these data have
 differences of about:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3372,7 +3372,7 @@ correlation:</p>
 <span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fl">1000</span> <span class="co">#a buffer   </span></span>
 <span><span class="fu">polygon</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="op">-</span><span class="va">b</span>,<span class="va">k</span>,<span class="va">k</span>,<span class="op">-</span><span class="va">b</span><span class="op">)</span>,<span class="fu">c</span><span class="op">(</span><span class="op">-</span><span class="va">b</span>,<span class="op">-</span><span class="va">b</span>,<span class="va">k</span>,<span class="va">k</span><span class="op">)</span>,col<span class="op">=</span><span class="st">"red"</span>,density<span class="op">=</span><span class="fl">0</span>,border<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/basic-exploratory-data-analysis-rendered-corr_two_samples-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="exercise-1" class="callout challenge">
+<figure><img src="fig/basic-exploratory-data-analysis-rendered-corr_two_samples-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="exercise-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -3389,7 +3389,7 @@ correlation:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><code>length(which(e[,1] &lt;= 3000 &amp; e[,2]&lt;= 3000)) / dim(e)[1]</code><br><code>sum(e[,1] &lt;= 3000 &amp; e[,2] &lt;= 3000) / dim(e)[1]</code></p>
 </div>
@@ -3419,7 +3419,7 @@ D) We always take logs.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The answer choice is A: The tails do not dominate the plot, 95% of
 data are not in a tiny section of the plot.</p>
@@ -3452,7 +3452,7 @@ comparison?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>e &lt;- log2(exprs(mas133))</code><br><code>plot((e[,1]+e[,2])/2,e[,2]-e[,1],cex=0.5)</code><br><code>sd(e[,2]-e[,1])</code></p>
 </div>
@@ -3476,7 +3476,7 @@ comparison?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><code>sum(abs(e[,2]-e[,1])1)</code></p>
 </div>
@@ -3506,7 +3506,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-principal-component-analysis"><p>Content from <a href="principal-component-analysis.html">Principal Components Analysis</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/principal-component-analysis.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4353,7 +4353,8 @@ loadings:</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in pcaobj$rotated: object of type 'closure' is not subsettable</code></pre>
+<pre class="error" tabindex="0"><code>Error in `pcaobj$rotated`:
+! object of type 'closure' is not subsettable</code></pre>
 </div>
 <figure><img src="./fig/pca-biplot.png" alt="Biplot of principal components one and two showing two groups for PC1 according to gene expression." class="figure mx-auto d-block"><div class="figcaption">Biplot of principal components one and two
 showing two groups for PC1 according to gene expression.</div>
@@ -4371,7 +4372,8 @@ other PC axes.</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in pcaobj$loadings: object of type 'closure' is not subsettable</code></pre>
+<pre class="error" tabindex="0"><code>Error in `pcaobj$loadings`:
+! object of type 'closure' is not subsettable</code></pre>
 </div>
 <figure><img src="./fig/pca-loadings.png" alt="Plot of principal component loadings show magnitude and direction of gene probes." class="figure mx-auto d-block"><div class="figcaption">Plot of principal component loadings show
 magnitude and direction of gene probes.</div>
@@ -4423,7 +4425,8 @@ biplots including different principal components.</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in pcaobj$components: object of type 'closure' is not subsettable</code></pre>
+<pre class="error" tabindex="0"><code>Error in `pcaobj$components`:
+! object of type 'closure' is not subsettable</code></pre>
 </div>
 <figure><img src="./fig/pairsplot.png" alt="Pairsplot of principal components show clusters on PC1 only." class="figure mx-auto d-block"><div class="figcaption">Pairsplot of principal components show clusters
 on PC1 only.</div>
@@ -4487,7 +4490,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-statistical-models"><p>Content from <a href="statistical-models.html">Statistical Models</a></p>
 <hr>
-<p>Last updated on 2025-11-11 |
+<p>Last updated on 2026-02-03 |
 
         <a href="https://github.com/smcclatchy/inference-high-dimensional-data/edit/main/episodes/statistical-models.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4613,7 +4616,7 @@ simulation.
 </h3>
 <pre class="output" tabindex="0"><code>winners
     0     1     2     3     4
-0.615 0.305 0.067 0.011 0.002 </code></pre>
+0.609 0.303 0.077 0.008 0.003 </code></pre>
 </div>
 <p>For cases like this, where <span class="math inline">\(N\)</span> is
 very large, but <span class="math inline">\(p\)</span> is small enough
