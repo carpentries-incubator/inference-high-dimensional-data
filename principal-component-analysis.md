@@ -765,7 +765,8 @@ biplot(pc, lab = rownames(pc$metadata), pointSize = 1, labSize = 1)
 ```
 
 ``` error
-Error in pcaobj$rotated: object of type 'closure' is not subsettable
+Error in `pcaobj$rotated`:
+! object of type 'closure' is not subsettable
 ```
 ![Biplot of principal components one and two showing two groups for PC1 according to gene expression.](./fig/pca-biplot.png)
 
@@ -780,7 +781,8 @@ plotloadings(pc, labSize = 3)
 ```
 
 ``` error
-Error in pcaobj$loadings: object of type 'closure' is not subsettable
+Error in `pcaobj$loadings`:
+! object of type 'closure' is not subsettable
 ```
 
 ![Plot of principal component loadings show magnitude and direction of gene probes.](./fig/pca-loadings.png)
@@ -820,7 +822,8 @@ pairsplot(pc)
 ```
 
 ``` error
-Error in pcaobj$components: object of type 'closure' is not subsettable
+Error in `pcaobj$components`:
+! object of type 'closure' is not subsettable
 ```
 
 ![Pairsplot of principal components show clusters on PC1 only.](./fig/pairsplot.png)
