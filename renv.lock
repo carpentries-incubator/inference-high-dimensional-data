@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.5.2",
+    "Version": "4.5.3",
     "Repositories": [
       {
         "Name": "BioCsoft",
@@ -447,7 +447,7 @@
       "Title": "Bayesian Analysis of Quantile Regression Models",
       "Date": "2020-05-30",
       "Author": "Rahim Alhamzawi",
-      "Maintainer": "Rahim Alhamzawi  (University of Al-Qadisiyah) <rahim.alhamzawi@qu.edu.iq>",
+      "Maintainer": "Rahim Alhamzawi (University of Al-Qadisiyah) <rahim.alhamzawi@qu.edu.iq>",
       "Description": "Bayesian estimation and variable selection for quantile regression models.",
       "License": "GPL (>= 3)",
       "NeedsCompilation": "no",
