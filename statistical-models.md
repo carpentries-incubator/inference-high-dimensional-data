@@ -106,8 +106,8 @@ prop.table(tab)
 
 ``` output
 winners
-    0     1     2     3 
-0.626 0.312 0.054 0.008 
+    0     1     2     3     4 
+0.607 0.311 0.075 0.006 0.001 
 ```
 
 For cases like this, where $N$ is very large, but $p$ is small enough to make 
